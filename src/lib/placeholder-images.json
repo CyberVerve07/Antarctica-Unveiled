@@ -1,0 +1,64 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-antarctica",
+      "description": "A vast, icy landscape in Antarctica under a clear blue sky, with mountains in the distance.",
+      "imageUrl": "https://images.unsplash.com/photo-1647163641449-26c4350f0c09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhbnRhcmN0aWNhJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc2NTMxMzk3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "antarctica landscape"
+    },
+    {
+      "id": "history-exploration",
+      "description": "An old wooden ship stuck in the ice, representing early Antarctic exploration.",
+      "imageUrl": "https://images.unsplash.com/photo-1672351629730-2b828b2339f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvbGQlMjBzaGlwJTIwaWNlfGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "old ship ice"
+    },
+    {
+      "id": "life-research-station",
+      "description": "A modern research station in Antarctica with people walking around in heavy winter gear.",
+      "imageUrl": "https://images.unsplash.com/photo-1584266106906-503242fa6b52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZXNlYXJjaCUyMHN0YXRpb258ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "research station"
+    },
+    {
+      "id": "research-scientist",
+      "description": "A scientist in a parka taking ice core samples.",
+      "imageUrl": "https://images.unsplash.com/photo-1584267828520-5e0d3fc22287?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzY2llbnRpc3QlMjBpY2V8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "scientist ice"
+    },
+    {
+      "id": "climate-glacier",
+      "description": "A large glacier calving into the ocean.",
+      "imageUrl": "https://images.unsplash.com/photo-1763754078284-caee648e22fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxnbGFjaWVyJTIwY2FsdmluZ3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "glacier calving"
+    },
+    {
+      "id": "visit-cruise-ship",
+      "description": "A cruise ship navigating between icebergs in Antarctica.",
+      "imageUrl": "https://images.unsplash.com/photo-1563987177365-f4c2b3148d29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcnVpc2UlMjBzaGlwJTIwaWNlYmVyZ3N8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cruise ship icebergs"
+    },
+    {
+      "id": "deep-facts",
+      "description": "An abstract image of ice crystals or a deep blue crevasse.",
+      "imageUrl": "https://images.unsplash.com/photo-1542601931-1ec92c394336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZWVwJTIwYmx1ZSUyMGljZXxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "deep blue ice"
+    },
+    {
+      "id": "mcmurdo-station",
+      "description": "An aerial view of McMurdo Station, the largest research base in Antarctica.",
+      "imageUrl": "https://images.unsplash.com/photo-1584266106906-503242fa6b52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZXNlYXJjaCUyMHN0YXRpb258ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "antarctic base"
+    },
+    {
+      "id": "vostok-station",
+      "description": "The isolated Vostok Station in the middle of a vast, flat, snowy expanse.",
+      "imageUrl": "https://images.unsplash.com/photo-1761844829335-e25e628db461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmVtb3RlJTIwc3RhdGlvbnxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "remote station"
+    },
+    {
+      "id": "concordia-station",
+      "description": "Concordia Station with its two cylindrical towers under the Antarctic night sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1641205535001-7c87f9d1b6ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhbnRhcmN0aWMlMjBuaWdodHxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "antarctic night"
+    }
+  ]
+}

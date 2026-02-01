@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 220 50% 3%;
+    --foreground: 210 20% 95%;
+    --card: 220 40% 7%;
+    --card-foreground: 210 20% 95%;
+    --popover: 220 40% 7%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 180 90% 55%;
+    --primary-foreground: 220 40% 5%;
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 220 30% 15%;
+    --muted-foreground: 210 20% 60%;
+    --accent: 260 90% 65%;
+    --accent-foreground: 220 40% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 30% 15%;
+    --input: 220 30% 20%;
+    --ring: 180 90% 55%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Aurora Background Animation */
+@keyframes aurora-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.aurora-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+  background: linear-gradient(
+    -45deg,
+    hsl(var(--primary)),
+    hsl(var(--accent)),
+    hsl(var(--chart-2)),
+    hsl(190 90% 60%)
+  );
+  background-size: 400% 400%;
+  animation: aurora-glow 30s ease infinite;
+  filter: blur(80px);
+}
+
+
+/* Snowfall effect */
+@keyframes snowfall {
+  0% {
+    transform: translateY(0vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg);
+  }
+}
+
+.snowflake {
+  position: absolute; /* Using absolute within a fixed container */
+  top: -5vh; /* Start above the screen */
+  background: hsla(190, 100%, 95%, 0.9); /* slight blue tint, more opacity */
+  border-radius: 50%;
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  box-shadow: 0 0 8px 2px hsla(190, 100%, 85%, 0.5); /* glow effect */
+}
