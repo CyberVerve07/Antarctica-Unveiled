@@ -9,7 +9,7 @@
     {
       "id": "history-exploration",
       "description": "An old wooden ship stuck in the ice, representing early Antarctic exploration.",
-      "imageUrl": "https://images.unsplash.com/photo-1672351629730-2b828b2339f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvbGQlMjBzaGlwJTIwaWNlfGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvbGQlMjBzaGlwJTIwaWNlfGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "old ship ice"
     },
     {
@@ -59,6 +59,18 @@
       "description": "Concordia Station with its two cylindrical towers under the Antarctic night sky.",
       "imageUrl": "https://images.unsplash.com/photo-1641205535001-7c87f9d1b6ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhbnRhcmN0aWMlMjBuaWdodHxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "antarctic night"
+    },
+    {
+      "id": "wildlife-penguins",
+      "description": "A group of penguins waddling across the snow in Antarctica.",
+      "imageUrl": "https://images.unsplash.com/photo-1598463595514-c68991a0ee23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8cGVndWluc3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "penguins snow"
+    },
+    {
+      "id": "expedition-team",
+      "description": "An expedition team trekking across the Antarctic ice.",
+      "imageUrl": "https://images.unsplash.com/photo-1516086811231-1e969a531f82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHhleHBlZGl0aW9ufGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "expedition team"
     }
   ]
 }

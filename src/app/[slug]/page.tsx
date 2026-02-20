@@ -363,95 +363,221 @@ const factsPageContent = `
 </ol>
 `;
 
-const historyPageContent = `<p>Antarctica's history is not one of settlement, but of fleeting, brutal encounters with the world's most extreme environment. It is a story of exploration, scientific discovery, and the slow dawn of a global political consciousness. The timeline below captures the key moments, from the first tentative crossings of the Antarctic Circle to the complex geopolitical realities of today.</p>`;
+const historyPageContent = `
+<p>Antarctica’s history is a testament to human endurance, ambition, and the relentless drive to explore the unknown. Before the 19th century, it was a theoretical landmass—<i>Terra Australis Incognita</i>—hypothesized to exist simply to balance the lands of the Northern Hemisphere. Today, it stands as a symbol of scientific collaboration, yet the journey from myth to modern reality is paved with unimaginable hardship.</p>
+<h2>1. The Early Sightings (1820s)</h2>
+<p>The existence of Antarctica was finally confirmed in 1820. Three completely separate expeditions, led by Russian Fabian Gottlieb von Bellingshausen, British Edward Bransfield, and American Nathaniel Palmer, spotted the ice shelf or the Antarctic Peninsula within days or weeks of each other.</p>
+<p>These early encounters were not driven by pure science but by the lucrative sealing industry. Sealers ruthlessly exploited the beaches of sub-Antarctic islands, nearly driving several species to extinction before pushing further south into the ice.</p>
+<h2>2. The Heroic Age of Antarctic Exploration (Late 19th - Early 20th Century)</h2>
+<p>This period is defined by intense, internationally competitive expeditions aimed at scientific discovery and geographic milestones—most notably, the race to the South Pole. It was an era of wood, canvas, and animal power against the brute force of the polar environment.</p>
+<ul>
+    <li><strong>Robert Falcon Scott (UK):</strong> Led the Discovery Expedition (1901–1904) and the tragic Terra Nova Expedition (1910–1913). Scott and his team reached the Pole, only to find they had been beaten, and all perished on the harrowing return journey.</li>
+    <li><strong>Roald Amundsen (Norway):</strong> The ultimate pragmatist. Using sled dogs, skis, and drawing on Inuit survival techniques, Amundsen’s team became the first to reach the South Pole on December 14, 1911. They returned safely, a masterful execution of polar logistics.</li>
+    <li><strong>Ernest Shackleton (UK):</strong> Famous not for reaching goals, but for his extraordinary leadership in failure. During the Imperial Trans-Antarctic Expedition (1914–1917), his ship, the <i>Endurance</i>, was crushed by ice. Shackleton’s open-boat journey across the Southern Ocean to rescue his men remains one of the greatest survival stories in history. Every man survived.</li>
+</ul>
+<blockquote><p>"For scientific discovery give me Scott; for speed and efficiency of travel give me Amundsen; but when disaster strikes and all hope is gone, get down on your knees and pray for Shackleton." — Apsley Cherry-Garrard</p></blockquote>
+<h2>3. The Mechanized Era and the IGY (Mid-20th Century)</h2>
+<p>Following WWII, the approach to Antarctica shifted from heroic survival to sustained, mechanized occupation. Airplanes, tractors, and icebreakers replaced dogs and wooden ships. The U.S. Navy’s Operation Highjump (1946–1947) was the largest expedition ever mounted, involving thousands of men and mapping vast stretches of the coastline.</p>
+<p>The turning point, however, was the <strong>International Geophysical Year (IGY) of 1957–1958</strong>. Twelve nations established over 60 stations across the continent. It proved that international scientific cooperation could transcend Cold War geopolitical tensions, fundamentally changing the human relationship with the continent.</p>
+<h2>4. The Antarctic Treaty (1959 - Present)</h2>
+<p>The success of the IGY led directly to the Antarctic Treaty, signed in 1959. It is a unique geopolitical document that:</p>
+<ul>
+    <li>Demilitarizes the entire continent.</li>
+    <li>Suspends all territorial sovereignty claims.</li>
+    <li>Dedicates the land to peaceful, cooperative scientific research.</li>
+</ul>
+<p>Since its signing, subsequent protocols have banned mining and established strict environmental protections. Antarctica remains the only continent without a native human population, governed not by a sovereign state, but by an international agreement dedicated to science and preservation.</p>
+`;
 
-const researchPageContent = `<p>Antarctica is a continent for science. It is a pristine natural laboratory where researchers can study everything from the Earth's climate history to the very origins of life. The major research stations are hubs of international collaboration, pushing the boundaries of human knowledge in the most challenging environment on Earth. Below is a breakdown of the most significant stations and their work.</p>`;
+const researchPageContent = `
+<p>Antarctica is not merely a continent; it is Earth's premier natural laboratory. Separated from the industrialized world by the roaring Southern Ocean, its pristine environment allows scientists to study phenomena impossible to observe anywhere else. From ancient climate history locked in ice to the mysteries of the cosmos viewed through the crystal-clear polar atmosphere, research here is critical to understanding our planet's past and securing its future.</p>
+<h2>1. Glaciology and Paleoclimatology: Reading the Ice</h2>
+<p>The Antarctic ice sheet is a massive archive of Earth's climate history. By drilling deep into the ice—sometimes over 3 kilometers down—scientists extract ice cores containing trapped air bubbles, dust, and isotopes from hundreds of thousands of years ago.</p>
+<ul>
+    <li><strong>The Vostok Core:</strong> Provided continuous climate data going back 400,000 years, conclusively linking past atmospheric carbon dioxide concentrations with global temperature variations.</li>
+    <li><strong>EPICA Dome C:</strong> Extended this record to 800,000 years. Current efforts are targeting a 1.5-million-year-old ice core to understand even older climate transitions.</li>
+</ul>
+<p>This data is the bedrock of modern climate science, proving unequivocally that current greenhouse gas levels are an anomaly driven by human activity.</p>
+<h2>2. Astronomy and Astrophysics: The Clear View Up</h2>
+<p>The South Pole is arguably the best location on Earth for certain types of astronomy. The high altitude (about 2,800 meters), extreme cold (which reduces atmospheric moisture to near zero), and stable atmosphere provide unparalleled viewing conditions.</p>
+<ul>
+    <li><strong>IceCube Neutrino Observatory:</strong> A completely unique telescope built <i>into</i> the ice. It consists of thousands of sensors deployed deep within a cubic kilometer of clear Antarctic ice to detect neutrinos—ghostly subatomic particles originating from the most violent events in the universe, such as black holes and supernovas.</li>
+    <li><strong>South Pole Telescope (SPT):</strong> Designed to survey the cosmic microwave background radiation, studying the very early universe and the distribution of dark energy and dark matter.</li>
+</ul>
+<h2>3. Marine Biology and Ecology: Life on the Edge</h2>
+<p>The Southern Ocean surrounding Antarctica is one of the most productive marine ecosystems on the planet, despite the extreme cold and seasonal darkness.</p>
+<ul>
+    <li><strong>Krill Research:</strong> Antarctic krill are the keystone species of the Southern Ocean, supporting the entire food web (penguins, seals, whales). Scientists study how changing ice conditions and ocean acidification threaten krill populations, which has cascading effects globally.</li>
+    <li><strong>Adaptation to Extreme Cold:</strong> Researchers investigate how Antarctic fish survive sub-zero waters without freezing, discovering unique "antifreeze glycoproteins" in their blood. Understanding these adaptations has profound implications for medicine, evolutionary biology, and biotechnology.</li>
+</ul>
+<h2>4. Geology and Geophysics: What Lies Beneath</h2>
+<p>Beneath the kilometers of ice lies a complex topography of mountain ranges, vast rift systems, and an extensive network of subglacial lakes and rivers.</p>
+<ul>
+    <li><strong>Subglacial Lakes (e.g., Lake Vostok):</strong> These massive bodies of liquid water are kept liquid by geothermal heat and the pressure of the ice above. They have been sealed off from the surface for millions of years. Drilling into these lakes (with extreme caution to prevent contamination) offers a chance to find unique extremophilic microbial life, providing clues about the potential for life on icy moons like Jupiter's Europa.</li>
+    <li><strong>Tectonic Studies:</strong> Mapping the bedrock helps understand the breakup of the supercontinent Gondwana and precisely models how the ice sheet flows and responds to warming oceans.</li>
+</ul>
+<h2>5. Logistical Realities of Antarctic Science</h2>
+<p>Conducting this research requires immense logistical support. Stations range from small, seasonal field camps to massive operations like the US McMurdo Station (operating similarly to a small town). Supplying these bases with fuel, food, and equipment via icebreakers and specialized aircraft is among the most challenging and expensive logistical operations in the world.</p>
+`;
 
+const wildlifePageContent = `
+<p><strong>Antarctic wildlife operates on the absolute edge of biological possibility.</strong> The terrestrial environment is nearly sterile, home only to microscopic organisms, tardigrades, and hardy lichens clinging to exposed rock. However, the Southern Ocean surrounding the continent teems with an astonishing concentration of life, driven by nutrient-rich upwellings that sustain a massive, though delicate, food web.</p>
+<h2>1. The Foundation: Krill (The Keystone)</h2>
+<p>Everything in the Antarctic ecosystem ultimately relies on <i>Euphausia superba</i>—Antarctic krill. These small, shrimp-like crustaceans form immense swarms that can stretch for miles, visible from space.</p>
+<ul>
+    <li>They graze on phytoplankton growing under the sea ice.</li>
+    <li>Total biomass is estimated at 300–500 million tonnes, making them one of the most abundant animal species on Earth.</li>
+    <li><strong>The Threat:</strong> Krill face a dual threat from commercial fishing (used for aquaculture feed and omega-3 supplements) and the loss of the sea ice they rely on for breeding and shelter.</li>
+</ul>
+<h2>2. The Icons: Penguins</h2>
+<p>Penguins are the defining birds of Antarctica. While there are 18 species globally, only a few are truly Antarctic.</p>
+<ul>
+    <li><strong>Emperor Penguins:</strong> The giants (up to 1.2m tall). They are the only species that breeds during the brutal Antarctic winter on the open sea ice. Males huddle together for months in complete darkness, balancing an egg on their feet in −60°C winds while the females hunt.</li>
+    <li><strong>Adélie Penguins:</strong> Small, feisty, and intensely numerous. They breed on rocky shores during the short summer. They depend heavily on sea ice for foraging.</li>
+    <li><strong>Chinstrap & Gentoo Penguins:</strong> Often found on the warmer Antarctic Peninsula. As the Peninsula warms, sea ice-dependent Adélies are declining, while Gentoos (who prefer open water) are expanding their range southward.</li>
+</ul>
+<h2>3. The Predators: Seals</h2>
+<p>Six species of seals live in established Antarctic waters, thriving on the bounty of fish, squid, and krill.</p>
+<ul>
+    <li><strong>Leopard Seals:</strong> Solitary, massive (up to 3.5m), and formidable apex predators. They possess massive jaws and a unique dentition that allows them to hunt penguins on the ice edge, while also filtering krill from the water.</li>
+    <li><strong>Weddell Seals:</strong> The southernmost mammals on Earth. They live fast to the coastal ice, maintaining breathing holes by gnawing the ice with their powerful incisors. They can dive over 600m deep and hold their breath for over an hour.</li>
+    <li><strong>Crabeater Seals:</strong> Despite the name, they don't eat crabs; they are specialized krill feeders. They are considered the most abundant large mammal on Earth (excluding humans).</li>
+</ul>
+<h2>4. The Giants: Whales</h2>
+<p>The Southern Ocean is a crucial feeding ground for numerous cetacean species.</p>
+<ul>
+    <li><strong>Baleen Whales:</strong> Blue, Fin, Humpback, and Minke whales migrate thousands of miles to gorge on Antarctic krill during the summer. A blue whale can consume up to 4 tons of krill per day. They build up massive blubber reserves here before returning north to breed.</li>
+    <li><strong>Orcas (Killer Whales):</strong> Highly intelligent apex predators. Different "ecotypes" target different prey. "Type B" orcas famously use coordinated physical attacks to create waves that wash seals off ice floes.</li>
+</ul>
+<h2>5. The Unseen: Benthic Life</h2>
+<p>Beneath the ice, the sea floor (benthos) holds surprising diversity, characterized by gigantism and slow growth rates due to the cold, stable conditions.</p>
+<ul>
+    <li>Sea spiders the size of dinner plates.</li>
+    <li>Sponges and corals that may be hundreds or thousands of years old.</li>
+    <li>These bottom-dwelling communities are highly vulnerable to physical disturbance, such as passing icebergs scraping the seafloor, or changes in ocean temperature.</li>
+</ul>
+`;
+
+const expeditionPageContent = `
+<p>Undertaking an expedition to Antarctica today is vastly different from the Heroic Age, yet it remains one of the most challenging environments on Earth. Modern expeditions blend extreme sports, scientific field research, and rigorous survival discipline. This page details what it takes to organize, launch, and survive a contemporary Antarctic expedition.</p>
+<h2>1. Modern Logistics and Support</h2>
+<p>Gone are the days of wood and canvas alone. Today's deep field expeditions rely on a highly specialized network of transport and support systems.</p>
+<ul>
+    <li><strong>Air Support:</strong> Ski-equipped aircraft like the Twin Otter and Basler BT-67 are the workhorses of the continent, capable of landing on unprepared snow surfaces to deploy teams and establish fuel caches.</li>
+    <li><strong>Ground Transport:</strong> Specialized tracked vehicles (like PistenBullys) towing sledges are used for heavy traverses, moving thousands of pounds of fuel and equipment across the ice shelf or plateau.</li>
+</ul>
+<h2>2. Expedition Profiles</h2>
+<p>Expeditions generally fall into several categories, each with its own risk profile and objectives.</p>
+<ul>
+    <li><strong>Deep Field Science Camps:</strong> Teams of scientists establish temporary camps hundreds of miles from the main bases. They might spend weeks drilling ice cores, collecting meteorites, or surveying geology. These require massive logistical backing but operate in nearly complete isolation once deployed.</li>
+    <li><strong>Extreme Distance Crossings:</strong> Athletes and adventurers still cross the continent, often unsupported (no food drops) and unassisted (no kites or vehicles). These grueling journeys demand dragging sleds weighing over 100kg for thousands of kilometers, battling crevasses and relentless sastrugi (wind-blown ice ridges).</li>
+    <li><strong>Mountaineering:</strong> The Vinson Massif (Antarctica's highest peak) is a target for climbers completing the Seven Summits. Beyond Vinson, much of the continent's interior mountains remain unclimbed, offering pristine, highly challenging alpine routes.</li>
+</ul>
+<h2>3. Survival in the Deep Field</h2>
+<p>When operating away from established bases, expeditioners must be entirely self-sufficient.</p>
+<ul>
+    <li><strong>Shelter:</strong> Specialized double-walled dome tents designed to withstand hurricane-force winds. Sleep is managed in extreme cold-weather sleeping bags rated to -40°C or lower.</li>
+    <li><strong>Caloric Intake:</strong> Pulling a sled in extreme cold requires 5,000 to 7,000 calories a day. Diets consist of dehydrated meals, copious amounts of butter, chocolate, and freeze-dried meats to maximize caloric density.</li>
+    <li><strong>Crevasse Rescue:</strong> The greatest physical danger while traveling. All team members must be expertly trained in crevasse rescue techniques, often traveling roped together. The surface snow often hides deep chasms capable of swallowing a person or a vehicle.</li>
+</ul>
+<h2>4. The Psychological Toll</h2>
+<p>The physical demands of an expedition are matched by the mental challenges. The sensory deprivation of the polar plateau—endless white in every direction, no sounds other than the wind—can cause severe psychological strain. Teams must manage conflict, maintain morale, and stay hyper-vigilant for weeks or months in an environment that allows zero margin for error.</p>
+`;
 
 const pageConfig: { [key: string]: { title: string; imageId: string; staticContent: string; } } = {
-  history: { 
-    title: "History of Antarctica", 
-    imageId: "history-exploration",
-    staticContent: historyPageContent,
-  },
-  life: { 
-    title: "Life in Antarctica", 
-    imageId: "life-research-station",
-    staticContent: lifePageContent,
-  },
-  research: { 
-    title: "Scientific Research", 
-    imageId: "research-scientist",
-    staticContent: researchPageContent,
-  },
-  climate: { 
-    title: "Climate & Global Impact", 
-    imageId: "climate-glacier",
-    staticContent: climatePageContent,
-  },
-  visit: { 
-    title: "How to Visit Antarctica", 
-    imageId: "visit-cruise-ship",
-    staticContent: visitPageContent,
-  },
-  'deep-facts': { 
-    title: "Deep Facts About Antarctica", 
-    imageId: "deep-facts",
-    staticContent: factsPageContent,
-  },
+    history: {
+        title: "History of Antarctica",
+        imageId: "history-exploration",
+        staticContent: historyPageContent,
+    },
+    life: {
+        title: "Life in Antarctica",
+        imageId: "life-research-station",
+        staticContent: lifePageContent,
+    },
+    research: {
+        title: "Scientific Research",
+        imageId: "research-scientist",
+        staticContent: researchPageContent,
+    },
+    climate: {
+        title: "Climate & Global Impact",
+        imageId: "climate-glacier",
+        staticContent: climatePageContent,
+    },
+    wildlife: {
+        title: "Antarctic Wildlife",
+        imageId: "wildlife-penguins",
+        staticContent: wildlifePageContent,
+    },
+    visit: {
+        title: "How to Visit Antarctica",
+        imageId: "visit-cruise-ship",
+        staticContent: visitPageContent,
+    },
+    expedition: {
+        title: "Antarctic Expeditions",
+        imageId: "expedition-team",
+        staticContent: expeditionPageContent,
+    },
+    'deep-facts': {
+        title: "Deep Facts About Antarctica",
+        imageId: "deep-facts",
+        staticContent: factsPageContent,
+    },
 };
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const config = pageConfig[params.slug as keyof typeof pageConfig];
-  if (!config) {
-    return {};
-  }
-  return {
-    title: `${config.title} | Antarctica Unveiled`,
-  };
+    const config = pageConfig[params.slug as keyof typeof pageConfig];
+    if (!config) {
+        return {};
+    }
+    return {
+        title: `${config.title} | Antarctica Unveiled`,
+    };
 }
 
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const config = pageConfig[slug as keyof typeof pageConfig];
+    const { slug } = params;
+    const config = pageConfig[slug as keyof typeof pageConfig];
 
-  if (!config) {
-    notFound();
-  }
-  
-  const initialContent = config.staticContent;
-  const heroImage = PlaceHolderImages.find(p => p.id === config.imageId);
+    if (!config) {
+        notFound();
+    }
 
-  return (
-    <article>
-      {slug === "climate" && <Snowfall />}
-      <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center text-center text-white overflow-hidden">
-        {heroImage && (
-            <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                priority
-                data-ai-hint={heroImage.imageHint}
-            />
-        )}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 p-4">
-            <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tight animate-fade-in-down">
-                {config.title}
-            </h1>
-        </div>
-      </header>
+    const initialContent = config.staticContent;
+    const heroImage = PlaceHolderImages.find(p => p.id === config.imageId);
 
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
-        <Card className="bg-card/70 backdrop-blur-sm border-primary/20 -mt-24 md:-mt-32 relative z-20">
-            <CardContent className="p-6 md:p-10">
-                <ContentBody slug={slug} initialContent={initialContent} />
-            </CardContent>
-        </Card>
-      </div>
-    </article>
-  );
+    return (
+        <article>
+            {slug === "climate" && <Snowfall />}
+            <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center text-center text-white overflow-hidden">
+                {heroImage && (
+                    <Image
+                        src={heroImage.imageUrl}
+                        alt={heroImage.description}
+                        fill
+                        className="object-cover"
+                        priority
+                        data-ai-hint={heroImage.imageHint}
+                    />
+                )}
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="relative z-10 p-4">
+                    <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tight animate-fade-in-down">
+                        {config.title}
+                    </h1>
+                </div>
+            </header>
+
+            <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
+                <Card className="bg-card/70 backdrop-blur-sm border-primary/20 -mt-24 md:-mt-32 relative z-20">
+                    <CardContent className="p-6 md:p-10">
+                        <ContentBody slug={slug} initialContent={initialContent} />
+                    </CardContent>
+                </Card>
+            </div>
+        </article>
+    );
 }
