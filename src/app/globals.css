@@ -57,16 +57,13 @@
   }
 }
 
-/* Aurora – lighter for performance, respect reduced motion */
+/* Aurora – optimized for performance */
 @keyframes aurora-glow {
-  0% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -77,17 +74,18 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.25;
   background: linear-gradient(
     -35deg,
-    hsl(var(--primary) / 0.4),
-    hsl(var(--accent) / 0.35),
-    hsl(192 75% 45% / 0.3)
+    hsl(var(--primary) / 0.3),
+    hsl(var(--accent) / 0.25),
+    hsl(192 75% 45% / 0.2)
   );
-  background-size: 300% 300%;
-  animation: aurora-glow 45s ease-in-out infinite;
-  filter: blur(56px);
+  background-size: 200% 200%;
+  animation: aurora-glow 60s ease-in-out infinite;
+  filter: blur(40px);
   pointer-events: none;
+  will-change: background-position;
 }
 
 @media (prefers-reduced-motion: reduce) {
