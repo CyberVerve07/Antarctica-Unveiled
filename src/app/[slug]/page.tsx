@@ -550,30 +550,31 @@ export default async function Page({ params }: { params: { slug: string } }) {
     const heroImage = PlaceHolderImages.find(p => p.id === config.imageId);
 
     return (
-        <article>
+        <article className="min-h-screen">
             {slug === "climate" && <Snowfall />}
-            <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center text-center text-white overflow-hidden">
+            <header className="relative h-[38vh] min-h-[220px] md:h-[45vh] flex items-center justify-center text-center text-white overflow-hidden">
                 {heroImage && (
                     <Image
                         src={heroImage.imageUrl}
                         alt={heroImage.description}
                         fill
-                        className="object-cover"
+                        className="object-cover object-center"
                         priority
+                        sizes="100vw"
                         data-ai-hint={heroImage.imageHint}
                     />
                 )}
-                <div className="absolute inset-0 bg-black/60" />
-                <div className="relative z-10 p-4">
-                    <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tight animate-fade-in-down">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/80" />
+                <div className="relative z-10 px-4 py-6">
+                    <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-in-down drop-shadow-lg">
                         {config.title}
                     </h1>
                 </div>
             </header>
 
-            <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
-                <Card className="bg-card/70 backdrop-blur-sm border-primary/20 -mt-24 md:-mt-32 relative z-20">
-                    <CardContent className="p-6 md:p-10">
+            <div className="container mx-auto px-4 md:px-6 py-10 md:py-14">
+                <Card className="bg-card/80 backdrop-blur-sm border border-border/80 shadow-xl shadow-black/10 -mt-20 md:-mt-28 relative z-20 rounded-2xl overflow-hidden">
+                    <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                         <ContentBody slug={slug} initialContent={initialContent} />
                     </CardContent>
                 </Card>

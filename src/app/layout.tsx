@@ -20,13 +20,13 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body bg-background text-foreground antialiased">
           <div className="aurora-background"></div>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-grow pt-20 relative z-10">
+            <main className="flex-grow pt-16 md:pt-20 relative z-10">
               {children}
             </main>
             <Footer />

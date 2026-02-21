@@ -20,39 +20,40 @@ export default function Home() {
   const heroImage = PlaceHolderImages.find((p) => p.id === "hero-antarctica");
 
   return (
-    <div className="w-full flex flex-col min-h-screen bg-black text-white">
+    <div className="w-full flex flex-col min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
+            sizes="100vw"
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/50 to-background" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 z-10">
           <main className="flex flex-col items-center max-w-4xl mx-auto">
-            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-shadow-lg animate-fade-in-down text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-blue-200">
+            <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight animate-fade-in-down text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-white to-sky-200 drop-shadow-[0_0_40px_rgba(34,211,238,0.3)]">
               Antarctica Unveiled
             </h1>
-            <p className="mt-6 max-w-2xl text-lg md:text-2xl text-blue-100/90 italic animate-fade-in-up delay-200 font-light">
+            <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-sky-100/95 italic animate-fade-in-up delay-200 font-light">
               "The land of silence, of white desolation, and of the shimmering,
               ethereal aurora."
             </p>
-            <p className="mt-8 text-base md:text-xl text-gray-300 animate-fade-in-up delay-400 font-medium leading-relaxed">
+            <p className="mt-6 md:mt-8 max-w-xl text-sm md:text-lg text-muted-foreground animate-fade-in-up delay-400 leading-relaxed">
               Explore the most untouched continent on Earth. A journey into the
               heart of ice and science, revealing the secrets of our planet's
               past and the keys to its future.
             </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-4 animate-fade-in-up delay-600">
+            <div className="mt-10 md:mt-14 flex flex-wrap justify-center gap-4 animate-fade-in-up delay-600">
               <Button
                 asChild
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white border-0 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(37,99,235,0.4)] px-8 text-lg rounded-full"
+                className="rounded-full px-8 text-base font-semibold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/30"
               >
                 <Link href="#explore">
                   Begin Journey <ChevronDown className="ml-2 h-5 w-5" />
@@ -61,36 +62,36 @@ export default function Home() {
             </div>
           </main>
         </div>
-      </div>
+      </section>
 
       {/* Explore Grid Section */}
-      <div id="explore" className="w-full py-24 px-6 md:px-12 lg:px-24 bg-[#0a0f18] relative z-20">
-        <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="text-center flex flex-col items-center gap-4">
-            <h2 className="text-4xl md:text-5xl font-bold font-headline text-white tracking-tight">
+      <section id="explore" className="w-full py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="max-w-6xl mx-auto flex flex-col gap-14">
+          <div className="text-center flex flex-col items-center gap-3">
+            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
               Discover the Continent
             </h2>
-            <div className="w-24 h-1 bg-blue-500 rounded-full" />
-            <p className="text-gray-400 max-w-2xl text-lg">
-              Delve into the comprehensive guides detailing every aspect of the world's most extreme environment.
+            <div className="w-16 h-1 rounded-full bg-primary" />
+            <p className="text-muted-foreground max-w-xl text-base md:text-lg">
+              Delve into guides detailing every aspect of the world's most extreme environment.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {navItems.map((item) => (
-              <Link key={item.name} href={item.href} className="group">
-                <Card className="h-full bg-white/5 border-white/10 overflow-hidden hover:border-blue-500/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] rounded-2xl">
-                  <CardContent className="p-6 flex flex-col h-full justify-between gap-4">
+              <Link key={item.name} href={item.href} className="group block">
+                <Card className="h-full bg-card/80 border border-border/80 overflow-hidden rounded-2xl transition-all duration-300 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5">
+                  <CardContent className="p-5 md:p-6 flex flex-col h-full justify-between gap-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-blue-100 group-hover:text-blue-400 transition-colors drop-shadow-md">
+                      <h3 className="font-headline text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                         {item.name}
                       </h3>
-                      <p className="text-gray-400 mt-2 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+                      <p className="text-muted-foreground mt-2 text-sm leading-relaxed group-hover:text-foreground/80 transition-colors">
                         {item.desc}
                       </p>
                     </div>
-                    <div className="flex items-center text-blue-500 text-sm font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                      Explore <ArrowRight className="ml-2 w-4 h-4" />
+                    <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform duration-200">
+                      Explore <ArrowRight className="ml-2 w-4 h-4 shrink-0" />
                     </div>
                   </CardContent>
                 </Card>
@@ -98,7 +99,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
