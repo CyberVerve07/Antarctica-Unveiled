@@ -18,7 +18,7 @@ type RelatedImagesProps = { slug: string; mainImageId: string };
 
 export function RelatedImages({ slug, mainImageId }: RelatedImagesProps) {
   const extraIds = slugToExtraIds[slug];
-  const ids = [mainImageId, ...(extraIds ?? [])].slice(0, 3);
+  const ids = Array.from(new Set([mainImageId, ...(extraIds ?? [])])).slice(0, 3);
   const images = ids
     .map((id) => PlaceHolderImages.find((p) => p.id === id))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
