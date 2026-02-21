@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent } from "@/components/ui/card";
 import { ContentBody } from "@/components/content-body";
+import { RelatedImages } from "@/components/related-images";
 import Snowfall from "@/components/ui/snowfall";
 
 // NOTE: All AI-generated content has been replaced with static content to resolve persistent generation errors.
@@ -576,6 +577,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <Card className="bg-card/80 backdrop-blur-sm border border-border/80 shadow-xl shadow-black/10 -mt-20 md:-mt-28 relative z-20 rounded-2xl overflow-hidden">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                         <ContentBody slug={slug} initialContent={initialContent} />
+                        <RelatedImages slug={slug} mainImageId={config.imageId} />
                     </CardContent>
                 </Card>
             </div>

@@ -1,19 +1,21 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Card, CardContent } from "@/components/ui/card";
+import { ExploreCard } from "@/components/explore-card";
+import { HomeStats } from "@/components/home-stats";
+import { ImageGalleryStrip } from "@/components/image-gallery-strip";
 
-const navItems = [
-  { name: "History", href: "/history", desc: "The heroic age of exploration and treaties." },
-  { name: "Life", href: "/life", desc: "How humans survive in extreme isolation." },
-  { name: "Research", href: "/research", desc: "Unlocking ancient climate and cosmic secrets." },
-  { name: "Climate", href: "/climate", desc: "Earth's largest heat regulator." },
-  { name: "Wildlife", href: "/wildlife", desc: "Penguins, whales, and the fragile food web." },
-  { name: "Expedition", href: "/expedition", desc: "Logistics of modern extreme crossings." },
-  { name: "Visit", href: "/visit", desc: "The reality of Antarctic tourism." },
-  { name: "Deep Facts", href: "/deep-facts", desc: "Unveiling the hidden truths of the ice." },
+const navItems: { name: string; href: string; desc: string; imageId: string }[] = [
+  { name: "History", href: "/history", desc: "The heroic age of exploration and treaties.", imageId: "history-exploration" },
+  { name: "Life", href: "/life", desc: "How humans survive in extreme isolation.", imageId: "life-research-station" },
+  { name: "Research", href: "/research", desc: "Unlocking ancient climate and cosmic secrets.", imageId: "research-scientist" },
+  { name: "Climate", href: "/climate", desc: "Earth's largest heat regulator.", imageId: "climate-glacier" },
+  { name: "Wildlife", href: "/wildlife", desc: "Penguins, whales, and the fragile food web.", imageId: "wildlife-penguins" },
+  { name: "Expedition", href: "/expedition", desc: "Logistics of modern extreme crossings.", imageId: "expedition-team" },
+  { name: "Visit", href: "/visit", desc: "The reality of Antarctic tourism.", imageId: "visit-cruise-ship" },
+  { name: "Deep Facts", href: "/deep-facts", desc: "Unveiling the hidden truths of the ice.", imageId: "deep-facts" },
 ];
 
 export default function Home() {
@@ -60,11 +62,22 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
+            <a
+              href="#explore"
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+              aria-label="Scroll to explore"
+            >
+              <span className="text-xs uppercase tracking-widest">Explore</span>
+              <ChevronDown className="h-6 w-6" />
+            </a>
           </main>
         </div>
       </section>
 
-      {/* Explore Grid Section */}
+      {/* Stats strip - interactive feel */}
+      <HomeStats />
+
+      {/* Explore Grid - image cards */}
       <section id="explore" className="w-full py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="max-w-6xl mx-auto flex flex-col gap-14">
           <div className="text-center flex flex-col items-center gap-3">
@@ -77,29 +90,22 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
             {navItems.map((item) => (
-              <Link key={item.name} href={item.href} className="group block">
-                <Card className="h-full bg-card/80 border border-border/80 overflow-hidden rounded-2xl transition-all duration-300 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5">
-                  <CardContent className="p-5 md:p-6 flex flex-col h-full justify-between gap-4">
-                    <div>
-                      <h3 className="font-headline text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                        {item.name}
-                      </h3>
-                      <p className="text-muted-foreground mt-2 text-sm leading-relaxed group-hover:text-foreground/80 transition-colors">
-                        {item.desc}
-                      </p>
-                    </div>
-                    <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform duration-200">
-                      Explore <ArrowRight className="ml-2 w-4 h-4 shrink-0" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              <ExploreCard
+                key={item.name}
+                name={item.name}
+                href={item.href}
+                desc={item.desc}
+                image={PlaceHolderImages.find((p) => p.id === item.imageId) ?? null}
+              />
             ))}
           </div>
         </div>
       </section>
+
+      {/* Image gallery strip */}
+      <ImageGalleryStrip />
     </div>
   );
 }
