@@ -6,19 +6,16 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, MountainSnow, X, ExternalLink, MapPin } from "lucide-react";
 import TemperatureWidget from "@/components/ui/temperature-widget";
+import { SearchBar } from "@/components/search-bar";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "History", href: "/history" },
-  { name: "Life", href: "/life" },
-  { name: "Research", href: "/research" },
-  { name: "Climate", href: "/climate" },
-  { name: "Wildlife", href: "/wildlife" },
-  { name: "Expedition", href: "/expedition" },
-  { name: "Visit", href: "/visit" },
-  { name: "Deep Facts", href: "/deep-facts" },
+  { name: "Places", href: "/places" },
+  { name: "Blog", href: "/blog" },
+  { name: "Write Story", href: "/blog/write" },
+  { name: "About", href: "/about" },
 ];
 
 export function Header() {
@@ -33,8 +30,8 @@ export function Header() {
             <MountainSnow className="h-7 w-7 text-primary transition-transform duration-300 group-hover:scale-110" />
             <div className="absolute inset-0 bg-primary/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-          <span className="bg-gradient-to-r from-primary to-cyan-200 bg-clip-text text-transparent">
-            Antarctica Unveiled
+          <span className="bg-gradient-to-r from-primary to-orange-200 bg-clip-text text-transparent">
+            Extreme Explorers
           </span>
         </Link>
         
@@ -55,7 +52,8 @@ export function Header() {
           ))}
         </nav>
         
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-3">
+          <SearchBar />
           <TemperatureWidget />
         </div>
         
@@ -83,8 +81,8 @@ export function Header() {
                 <div className="flex items-center justify-between p-4 border-b border-border/60">
                   <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold" onClick={() => setSheetOpen(false)}>
                     <MountainSnow className="h-6 w-6 text-primary" />
-                    <span className="bg-gradient-to-r from-primary to-cyan-200 bg-clip-text text-transparent">
-                      Antarctica
+                    <span className="bg-gradient-to-r from-primary to-orange-200 bg-clip-text text-transparent">
+                      Extreme Explorers
                     </span>
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setSheetOpen(false)}>

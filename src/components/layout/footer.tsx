@@ -5,25 +5,25 @@ const footerLinks = [
   {
     title: "Explore",
     links: [
-      { name: "History", href: "/history" },
-      { name: "Wildlife", href: "/wildlife" },
-      { name: "Climate", href: "/climate" },
-      { name: "Research", href: "/research" },
+      { name: "All Places", href: "/places" },
+      { name: "Dangerous", href: "/places?category=dangerous" },
+      { name: "Extreme", href: "/places?category=extreme" },
+      { name: "Beautiful", href: "/places?category=beautiful" },
     ],
   },
   {
-    title: "Visit",
+    title: "Community",
     links: [
-      { name: "Plan Your Trip", href: "/visit" },
-      { name: "Expedition", href: "/expedition" },
-      { name: "Research Stations", href: "/life" },
+      { name: "Blog", href: "/blog" },
+      { name: "Write Story", href: "/blog/write" },
+      { name: "About", href: "/about" },
     ],
   },
   {
-    title: "Learn",
+    title: "Resources",
     links: [
-      { name: "Deep Facts", href: "/deep-facts" },
-      { name: "Life at Stations", href: "/life" },
+      { name: "Survival Tips", href: "/places" },
+      { name: "Equipment Guide", href: "/places" },
     ],
   },
 ];
@@ -40,23 +40,23 @@ export function Footer() {
                 <MountainSnow className="h-8 w-8 text-primary" />
                 <div className="absolute inset-0 bg-primary/20 blur-xl" />
               </div>
-              <span className="bg-gradient-to-r from-primary to-cyan-200 bg-clip-text text-transparent">
-                Antarctica Unveiled
+              <span className="bg-gradient-to-r from-primary to-orange-200 bg-clip-text text-transparent">
+                Extreme Explorers
               </span>
             </Link>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6 max-w-sm">
-              An immersive journey into the coldest, driest, windiest, and highest 
-              continent on Earth. Discover the secrets of our planet's past and 
-              the challenges of its future.
+              Discover the world's most dangerous and breathtaking destinations. 
+              Share your adventures, read deep insights, and connect with fellow explorers 
+              who push human limits.
             </p>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Antarctica</span>
+                <span>Global</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>contact@antarcticaunveiled.com</span>
+                <span>contact@extremeexplorers.com</span>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>© {new Date().getFullYear()} Antarctica Unveiled. All rights reserved.</span>
+              <span>© {new Date().getFullYear()} Extreme Explorers. All rights reserved.</span>
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">

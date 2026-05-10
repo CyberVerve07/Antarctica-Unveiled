@@ -6,8 +6,8 @@ import { Header } from "@/components/layout/header";
 import { BackToTop } from "@/components/back-to-top";
 
 export const metadata: Metadata = {
-  title: 'Antarctica Unveiled',
-  description: 'An immersive journey into the coldest, driest, and highest continent on Earth.',
+  title: 'Extreme Explorers - World\'s Most Dangerous & Beautiful Places',
+  description: 'Discover the world\'s most extreme destinations - from the Amazon Rainforest to Mount Everest. Share your adventures, read deep insights, and connect with fellow explorers.',
   icons: [{ rel: 'icon', url: '/favicon.ico' }],
 };
 
