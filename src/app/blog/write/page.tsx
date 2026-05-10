@@ -1,14 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { ArrowLeft, Save, Eye, Upload, Image as ImageIcon } from "lucide-react";
+import { ArrowLeft, Save, Eye, Upload, Image as ImageIcon, Bold, Italic, List, Heading1 } from "lucide-react";
 import Link from "next/link";
-import { places } from "@/lib/places-data";
+import { places } from "@/lib/data";
 
 export default function BlogWritePage() {
   const [title, setTitle] = useState("");
@@ -16,6 +16,32 @@ export default function BlogWritePage() {
   const [selectedPlace, setSelectedPlace] = useState("");
   const [images, setImages] = useState<string[]>([]);
   const [isPreview, setIsPreview] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+
+  // Auto-save draft
+  useEffect(() => {
+    const draft = localStorage.getItem('blog-draft');
+    if (draft) {
+      try {
+        const parsed = JSON.parse(draft);
+        setTitle(parsed.title || "");
+        setContent(parsed.content || "");
+        setSelectedPlace(parsed.selectedPlace || "");
+        setImages(parsed.images || []);
+      } catch (e) {
+        console.error("Failed to load draft");
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (title || content) {
+        localStorage.setItem('blog-draft', JSON.stringify({ title, content, selectedPlace, images }));
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [title, content, selectedPlace, images]);
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -25,16 +51,54 @@ export default function BlogWritePage() {
     }
   };
 
-  const handleSave = () => {
-    // In a real app, this would save to Firebase Firestore
-    console.log({ title, content, selectedPlace, images });
-    alert("Blog post saved! (This would save to Firebase in production)");
+  const handleSave = async () => {
+    setIsSaving(true);
+    try {
+      // Simulate save delay
+      await new Promise(resolve => setTimeout(resolve, 500));
+      localStorage.setItem('blog-draft', JSON.stringify({ title, content, selectedPlace, images }));
+      alert("Blog draft saved locally!");
+    } catch (error) {
+      alert("Failed to save draft");
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const handlePublish = () => {
-    // In a real app, this would publish to Firebase Firestore
-    console.log({ title, content, selectedPlace, images });
+    if (!title || !content) {
+      alert("Please fill in title and content before publishing");
+      return;
+    }
+    // Clear draft after publishing
+    localStorage.removeItem('blog-draft');
     alert("Blog post published! (This would publish to Firebase in production)");
+  };
+
+  const insertMarkdown = (prefix: string, suffix: string = "") => {
+    const textarea = document.getElementById('content') as HTMLTextAreaElement;
+    if (!textarea) return;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const text = content;
+    const before = text.substring(0, start);
+    const selection = text.substring(start, end);
+    const after = text.substring(end);
+    setContent(before + prefix + selection + suffix + after);
+    textarea.focus();
+  };
+
+  // Simple markdown to HTML converter for preview
+  const renderMarkdown = (text: string) => {
+    let html = text
+      .replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-4 mb-2">$1</h3>')
+      .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-4 mb-2">$1</h2>')
+      .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mt-4 mb-2">$1</h1>')
+      .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+      .replace(/\*(.*)\*/gim, '<em>$1</em>')
+      .replace(/^- (.*$)/gim, '<li class="ml-4">$1</li>')
+      .replace(/\n/gim, '<br />');
+    return html;
   };
 
   return (
@@ -55,9 +119,9 @@ export default function BlogWritePage() {
               <Eye className="h-4 w-4" />
               {isPreview ? "Edit" : "Preview"}
             </Button>
-            <Button variant="outline" onClick={handleSave} className="gap-2">
+            <Button variant="outline" onClick={handleSave} disabled={isSaving} className="gap-2">
               <Save className="h-4 w-4" />
-              Save Draft
+              {isSaving ? "Saving..." : "Save Draft"}
             </Button>
             <Button onClick={handlePublish} className="gap-2">
               Publish
@@ -105,6 +169,47 @@ export default function BlogWritePage() {
             <Card className="p-6">
               <div className="space-y-2">
                 <Label htmlFor="content">Your Story</Label>
+                
+                {/* Markdown Toolbar */}
+                <div className="flex gap-2 mb-2 p-2 bg-muted/50 rounded-lg">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => insertMarkdown("# ", "")}
+                    title="Heading"
+                  >
+                    <Heading1 className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => insertMarkdown("**", "**")}
+                    title="Bold"
+                  >
+                    <Bold className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => insertMarkdown("*", "*")}
+                    title="Italic"
+                  >
+                    <Italic className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => insertMarkdown("- ", "")}
+                    title="List"
+                  >
+                    <List className="h-4 w-4" />
+                  </Button>
+                </div>
+                
                 <Textarea
                   id="content"
                   placeholder="Share your adventure, survival tips, and deep insights about this destination..."
@@ -113,7 +218,7 @@ export default function BlogWritePage() {
                   className="min-h-[400px] text-base leading-relaxed"
                 />
                 <p className="text-xs text-muted-foreground">
-                  Tip: Use Markdown for formatting. Add **bold**, *italic*, # headings, etc.
+                  Tip: Use the toolbar or Markdown for formatting. Add **bold**, *italic*, # headings, etc.
                 </p>
               </div>
             </Card>
@@ -191,9 +296,10 @@ export default function BlogWritePage() {
                     {places.find((p) => p.slug === selectedPlace)?.name}
                   </div>
                 )}
-                <div className="whitespace-pre-wrap text-base leading-relaxed">
-                  {content || "Your story will appear here..."}
-                </div>
+                <div 
+                  className="text-base leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: renderMarkdown(content || "Your story will appear here...") }}
+                />
               </div>
               
               {images.length > 0 && (

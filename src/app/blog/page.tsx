@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BookOpen, Calendar, User, MapPin, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { mockBlogs } from "@/lib/blog-data";
+import { mockBlogs } from "@/lib/data";
 
 export default function BlogPage() {
   return (

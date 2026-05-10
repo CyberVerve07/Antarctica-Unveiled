@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Mountain, Flame, TreePine, ArrowRight } from "lucide-react";
-import { places, getPlacesByCategory } from "@/lib/places-data";
-import { PlaceHolderImages } from "@/lib/placeholder-images-new";
+import { places, PlaceHolderImages } from "@/lib/data";
 
 export default function PlacesPage() {
-  const dangerousPlaces = getPlacesByCategory("dangerous");
-  const extremePlaces = getPlacesByCategory("extreme");
-  const beautifulPlaces = getPlacesByCategory("beautiful");
+  const dangerousPlaces = places.filter((place) => place.category === "dangerous");
+  const extremePlaces = places.filter((place) => place.category === "extreme");
+  const beautifulPlaces = places.filter((place) => place.category === "beautiful");
 
   return (
     <div className="w-full min-h-screen bg-background text-foreground">

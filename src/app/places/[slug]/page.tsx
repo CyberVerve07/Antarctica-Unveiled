@@ -3,8 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, MapPin, Flame, AlertTriangle, BookOpen, Users, Star } from "lucide-react";
-import { getPlaceBySlug, places } from "@/lib/places-data";
-import { PlaceHolderImages } from "@/lib/placeholder-images-new";
+import { places, getPlaceBySlug, PlaceHolderImages } from "@/lib/data";
 
 export async function generateStaticParams() {
   return places.map((place) => ({

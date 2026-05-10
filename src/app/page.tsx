@@ -4,13 +4,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronDown, Mountain, Flame, Wind, Snowflake, TreePine, Compass, ArrowRight, BookOpen, Users, Star } from "lucide-react";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images-new";
-import { places, getPlacesByCategory } from "@/lib/places-data";
+import { places, PlaceHolderImages } from "@/lib/data";
 import { useEffect } from "react";
 
 const featuredPlaces = places.slice(0, 5);
-const dangerousPlaces = getPlacesByCategory("dangerous");
-const extremePlaces = getPlacesByCategory("extreme");
+const dangerousPlaces = places.filter((place) => place.category === "dangerous");
+const extremePlaces = places.filter((place) => place.category === "extreme");
 
 const stats = [
   { icon: Mountain, title: "5+", desc: "Extreme Destinations" },

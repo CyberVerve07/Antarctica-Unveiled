@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
-import { places } from "@/lib/places-data";
-import { mockBlogs, type BlogPost } from "@/lib/blog-data";
+import { places, mockBlogs, type BlogPost } from "@/lib/data";
 import Link from "next/link";
 
 export function SearchBar() {

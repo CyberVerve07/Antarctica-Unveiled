@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, User, MapPin, Clock, BookOpen, Share2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { mockBlogs } from "@/lib/blog-data";
+import { mockBlogs } from "@/lib/data";
 
 export async function generateStaticParams() {
   return mockBlogs.map((blog) => ({
