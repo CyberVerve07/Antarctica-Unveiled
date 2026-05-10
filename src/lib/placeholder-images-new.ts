@@ -13,10 +13,10 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     imageHint: "Aerial view of Amazon River with green rainforest on both sides"
   },
   {
-    id: "amazon-jungle",
-    imageUrl: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",
-    description: "Dense Amazon jungle canopy",
-    imageHint: "Thick green jungle canopy with sunlight filtering through"
+    id: "amazon-rainforest",
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.DsIw1qFc-Vo9tUVVjqRP-gHaDt?rs=1&pid=ImgDetMain&o=7&rm=3",
+    description: "Amazon Rainforest canopy",
+    imageHint: "Lush green rainforest with sunlight filtering through canopy"
   },
   {
     id: "amazon-wildlife",
