@@ -80,25 +80,25 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   },
   {
     id: "antarctica-ice",
-    imageUrl: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80",
+    imageUrl: "https://www.bwallpaperhd.com/wp-content/uploads/2022/12/AntarcticaDay.jpg",
     description: "Antarctic ice landscape",
     imageHint: "Vast white ice sheet with blue ice formations"
   },
   {
     id: "antarctica-penguins",
-    imageUrl: "https://images.unsplash.com/photo-1462888210965-cdf193fb74de?w=800&q=80",
+    imageUrl: "https://www.bwallpaperhd.com/wp-content/uploads/2022/12/AntarcticaDay.jpg",
     description: "Emperor penguins in Antarctica",
     imageHint: "Colony of emperor penguins on ice"
   },
   {
     id: "antarctica-aurora",
-    imageUrl: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
+    imageUrl: "https://www.bwallpaperhd.com/wp-content/uploads/2022/12/AntarcticaDay.jpg",
     description: "Aurora Australis over Antarctica",
     imageHint: "Southern Lights dancing over Antarctic landscape"
   },
   {
     id: "antarctica-station",
-    imageUrl: "https://images.unsplash.com/photo-1483347752460-7afc6e52b9e2?w=800&q=80",
+    imageUrl: "https://www.bwallpaperhd.com/wp-content/uploads/2022/12/AntarcticaDay.jpg",
     description: "Research station in Antarctica",
     imageHint: "Scientific research station in snowy landscape"
   },

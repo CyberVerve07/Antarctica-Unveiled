@@ -227,7 +227,11 @@ export const places: Place[] = [
       "It's the largest desert in the world"
     ],
     imageId: "antarctica-ice",
-    galleryImages: ["antarctica-penguins", "antarctica-aurora", "antarctica-station"],
+    galleryImages: [
+      "https://tse2.mm.bing.net/th/id/OIP.OyoLcve5oDvJi-daylYuGAHaE8?w=1440&h=960&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "https://th.bing.com/th/id/OIP.mvwsaK5rjUxp5TBcxW-BbQHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "https://tse4.mm.bing.net/th/id/OIP.6wAGwrIYxR073h8iMS8CuAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+    ],
     survivalTips: [
       "Never travel alone",
       "Always carry emergency shelter",
