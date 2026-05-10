@@ -6,6 +6,8 @@ import { ArrowLeft, Calendar, User, MapPin, Clock, BookOpen, Share2 } from "luci
 import { Card } from "@/components/ui/card";
 import { mockBlogs } from "@/lib/data";
 import { TextHighlighter } from "@/components/text-highlighter";
+import { CommentSystem } from "@/components/comment-system";
+import { SocialShare } from "@/components/social-share";
 
 export async function generateStaticParams() {
   return mockBlogs.map((blog) => ({
@@ -94,10 +96,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
         {/* Share and Related */}
         <div className="mt-12 pt-8 border-t border-border/60">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <Button variant="outline" className="gap-2">
-              <Share2 className="h-4 w-4" />
-              Share Story
-            </Button>
+            <SocialShare title={blog.title} url={`/blog/${blog.id}`} />
             <Link href={`/places/${blog.placeSlug}`}>
               <Button variant="outline" className="gap-2">
                 <MapPin className="h-4 w-4" />
@@ -105,6 +104,11 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
               </Button>
             </Link>
           </div>
+        </div>
+
+        {/* Comments Section */}
+        <div className="mt-12 pt-8 border-t border-border/60">
+          <CommentSystem postId={blog.id.toString()} />
         </div>
 
         {/* CTA */}
