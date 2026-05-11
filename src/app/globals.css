@@ -1,34 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 222 47% 4%;
+    --background: 222 47% 4%; /* #020617 - Deep Navy Abyss */
     --foreground: 210 25% 96%;
-    --card: 222 40% 6%;
+    
+    --card: 222 47% 8%; /* #0c1324 - Surface container */
     --card-foreground: 210 25% 96%;
-    --popover: 222 40% 6%;
+    
+    --popover: 222 47% 6%;
     --popover-foreground: 210 25% 96%;
-    --primary: 187 85% 53%;
+    
+    --primary: 199 89% 48%; /* #0ea5e9 - Glacial Blue */
     --primary-foreground: 222 47% 4%;
-    --secondary: 220 28% 14%;
-    --secondary-foreground: 210 25% 96%;
-    --muted: 220 28% 14%;
-    --muted-foreground: 215 20% 58%;
-    --accent: 268 85% 62%;
-    --accent-foreground: 222 47% 4%;
-    --destructive: 0 62.8% 30.6%;
+    
+    --secondary: 268 100% 86%; /* #ddb7ff - Aurora Purple */
+    --secondary-foreground: 222 47% 4%;
+    
+    --tertiary: 172 66% 55%; /* #3cddc7 - Glacier Teal */
+    --tertiary-foreground: 222 47% 4%;
+    
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 268 85% 62%; /* #8b5cf6 */
+    --accent-foreground: 210 25% 96%;
+    
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 25% 16%;
-    --input: 220 25% 18%;
-    --ring: 187 85% 53%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --radius: 0.625rem;
+    
+    --border: 222 47% 12% / 0.5;
+    --input: 222 47% 12%;
+    --ring: 199 89% 48%;
+    
+    --radius: 0.5rem;
   }
 }
 
@@ -40,9 +49,19 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
     text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-headline {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
   }
   
   /* Smooth scrolling for the whole page */
@@ -204,11 +223,50 @@
   background-clip: text;
 }
 
-/* Glass effect */
+/* Premium Glassmorphism */
 .glass {
-  background: hsl(var(--card) / 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid hsl(var(--border) / 0.5);
+  background: hsla(222, 47%, 8%, 0.4);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-glow {
+  position: relative;
+}
+
+.glass-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.3),
+    transparent,
+    rgba(139, 92, 246, 0.2)
+  );
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.glass-glow:hover::after {
+  opacity: 1;
 }
 
 /* Gradient border */

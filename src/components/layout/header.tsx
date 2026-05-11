@@ -27,11 +27,12 @@ export function Header() {
       <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-lg md:text-xl font-bold group">
           <div className="relative">
-            <MountainSnow className="h-7 w-7 text-primary transition-transform duration-300 group-hover:scale-110" />
-            <div className="absolute inset-0 bg-primary/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-primary/20 blur-xl group-hover:bg-primary/40 transition-all duration-500 rounded-full" />
+            <MountainSnow className="h-7 w-7 text-primary transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
+            <div className="absolute -inset-1 border border-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-500" />
           </div>
-          <span className="bg-gradient-to-r from-primary to-orange-200 bg-clip-text text-transparent">
-            Extreme Explorers
+          <span className="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent tracking-tight">
+            ANTARCTICA <span className="text-foreground/90 font-light">UNVEILED</span>
           </span>
         </Link>
         
@@ -43,11 +44,17 @@ export function Header() {
               variant="ghost"
               size="sm"
               className={cn(
-                "text-foreground/70 hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm font-medium px-3",
-                pathname === item.href && "text-primary bg-primary/10 font-semibold"
+                "text-foreground/60 hover:text-primary hover:bg-primary/10 transition-all duration-300 text-sm font-medium px-4 relative group",
+                pathname === item.href && "text-primary font-semibold"
               )}
             >
-              <Link href={item.href}>{item.name}</Link>
+              <Link href={item.href}>
+                {item.name}
+                {pathname === item.href && (
+                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary rounded-full" />
+                )}
+                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary/40 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              </Link>
             </Button>
           ))}
         </nav>
@@ -79,10 +86,10 @@ export function Header() {
               <div className="flex flex-col h-full">
                 {/* Header in sheet */}
                 <div className="flex items-center justify-between p-4 border-b border-border/60">
-                  <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold" onClick={() => setSheetOpen(false)}>
-                    <MountainSnow className="h-6 w-6 text-primary" />
-                    <span className="bg-gradient-to-r from-primary to-orange-200 bg-clip-text text-transparent">
-                      Extreme Explorers
+                  <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold group" onClick={() => setSheetOpen(false)}>
+                    <MountainSnow className="h-6 w-6 text-primary group-hover:rotate-12 transition-transform" />
+                    <span className="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">
+                      ANTARCTICA <span className="text-foreground/90 font-light">UNVEILED</span>
                     </span>
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setSheetOpen(false)}>

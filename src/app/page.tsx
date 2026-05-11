@@ -2,27 +2,28 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ChevronDown, Mountain, Flame, Wind, Snowflake, TreePine, Compass, ArrowRight, BookOpen, Users, Star } from "lucide-react";
+import { ChevronDown, Mountain, Flame, Wind, Snowflake, TreePine, Compass, ArrowRight, BookOpen, Users, Star, Activity, Shield, Map as MapIcon, Radio } from "lucide-react";
 import Image from "next/image";
 import { places, PlaceHolderImages } from "@/lib/data";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const featuredPlaces = places.slice(0, 5);
-const dangerousPlaces = places.filter((place) => place.category === "dangerous");
-const extremePlaces = places.filter((place) => place.category === "extreme");
 
 const stats = [
-  { icon: Mountain, title: "5+", desc: "Extreme Destinations" },
-  { icon: Flame, title: "50+", desc: "Danger Levels Rated" },
-  { icon: BookOpen, title: "1000+", desc: "Adventure Stories" },
-  { icon: Users, title: "10K+", desc: "Active Explorers" },
+  { icon: Activity, title: "5+", desc: "Extreme Sectors", color: "text-primary" },
+  { icon: Shield, title: "50+", desc: "Survival Logs", color: "text-secondary" },
+  { icon: Radio, title: "10K+", desc: "Signal Syncs", color: "text-tertiary" },
+  { icon: MapIcon, title: "100%", desc: "Data Integrity", color: "text-primary" },
 ];
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((p) => p.id === "hero-adventure");
-  const heroExploration = PlaceHolderImages.find((p) => p.id === "hero-exploration");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -38,271 +39,282 @@ export default function Home() {
     revealElements.forEach((el) => observer.observe(el));
 
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       revealElements.forEach((el) => observer.unobserve(el));
     };
   }, []);
 
   return (
-    <div className="w-full flex flex-col min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center">
+    <div className="w-full flex flex-col min-h-screen bg-[#020617] text-foreground selection:bg-primary/30 selection:text-white">
+      {/* Aurora Background Layer */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/15 blur-[120px] rounded-full animate-pulse delay-700" />
+      </div>
+
+      {/* Hero Section - The Command Center */}
+      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center pt-20">
         {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-            data-ai-hint={heroImage.imageHint}
-          />
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
+              fill
+              className="object-cover object-center opacity-40 scale-105"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/90 via-[#020617]/60 to-[#020617]" />
+            {/* Scanline Effect */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none opacity-20" />
+          </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
         
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 z-10">
-          <main className="flex flex-col items-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 animate-fade-in-down">
-              <Compass className="h-4 w-4" />
-              <span>World's Most Extreme Destinations</span>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center">
+          <div className="flex flex-col items-center text-center max-w-4xl">
+            {/* Mission Status Badge */}
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full glass border-primary/20 text-primary text-xs font-mono uppercase tracking-[0.2em] mb-8 animate-fade-in-down shadow-[0_0_15px_rgba(14,165,233,0.2)]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              System Status: Active Exploration
             </div>
             
-            <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight animate-fade-in-down text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-white to-cyan-200 drop-shadow-[0_0_40px_rgba(34,211,238,0.3)]">
-              Extreme Explorers
+            <h1 className="font-headline text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight animate-fade-in-down mb-6">
+              <span className="block text-white">EXTREME</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-tertiary animate-gradient">EXPLORERS</span>
             </h1>
             
-            <p className="mt-6 max-w-2xl text-lg sm:text-xl md:text-2xl text-sky-100/90 italic animate-fade-in-up delay-200 font-light leading-relaxed">
-              "The world is a book, and those who do not travel read only one page."
+            <div className="relative px-8 py-4 mb-8 glass rounded-xl max-w-2xl animate-fade-in-up delay-200">
+              <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-12 bg-primary rounded-full shadow-[0_0_10px_rgba(14,165,233,0.8)]" />
+              <p className="text-xl md:text-2xl text-sky-100/80 font-light italic leading-relaxed">
+                "Pushing the boundaries of human endurance in the world's most unforgiving frontiers."
+              </p>
+              <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-1 h-12 bg-tertiary rounded-full shadow-[0_0_10px_rgba(60,221,199,0.8)]" />
+            </div>
+            
+            <p className="max-w-xl text-muted-foreground text-lg mb-12 animate-fade-in-up delay-400 leading-relaxed">
+              Welcome to the Tactical Operations Hub. Access survival data, thermal imagery, and mission logs from Earth's most dangerous sectors.
             </p>
             
-            <p className="mt-6 md:mt-8 max-w-xl text-base md:text-lg text-muted-foreground animate-fade-in-up delay-400 leading-relaxed">
-              Discover the world's most dangerous and breathtaking destinations. 
-              From the Amazon Rainforest to Mount Everest, explore places that push 
-              human limits. Share your adventures and read deep insights from fellow explorers.
-            </p>
-            
-            <div className="mt-10 md:mt-14 flex flex-wrap justify-center gap-4 animate-fade-in-up delay-600">
+            <div className="flex flex-wrap justify-center gap-6 animate-fade-in-up delay-600">
               <Button
                 asChild
                 size="lg"
-                className="rounded-full px-8 text-base font-semibold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/30"
+                className="group relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-7 rounded-lg text-lg font-bold transition-all duration-500 shadow-[0_0_20px_rgba(14,165,233,0.4)]"
               >
                 <Link href="#destinations">
-                  Explore Destinations <ChevronDown className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    INITIATE DISCOVERY <Activity className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="rounded-full px-8 text-base font-semibold border-primary/50 text-primary hover:bg-primary/10"
+                className="glass-card border-white/10 text-white hover:bg-white/5 px-10 py-7 rounded-lg text-lg font-bold"
               >
                 <Link href="/blog/write">
-                  <BookOpen className="mr-2 h-5 w-5" />
-                  Write Your Story
+                  <BookOpen className="mr-3 h-5 w-5 text-tertiary" />
+                  SUBMIT MISSION LOG
                 </Link>
               </Button>
             </div>
-            
-            {/* Quick Stats in Hero */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center animate-fade-in-up delay-700">
-              {stats.map((stat, index) => (
-                <div key={index}>
-                  <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-primary">
-                    <stat.icon className="h-6 w-6" />
-                    {stat.title}
-                  </div>
-                  <div className="text-xs md:text-sm text-muted-foreground mt-1">{stat.desc}</div>
+          </div>
+
+          {/* Telemetry Stats Bar */}
+          <div className="mt-24 w-full grid grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in-up delay-700">
+            {stats.map((stat, index) => (
+              <div key={index} className="glass-card p-6 rounded-xl flex flex-col items-center justify-center group hover:bg-white/5 transition-colors">
+                <div className={`p-3 rounded-full bg-white/5 mb-4 group-hover:scale-110 transition-transform ${stat.color}`}>
+                  <stat.icon className="h-6 w-6" />
                 </div>
-              ))}
-            </div>
-          </main>
+                <div className="text-3xl font-bold text-white mb-1">{stat.title}</div>
+                <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{stat.desc}</div>
+              </div>
+            ))}
+          </div>
         </div>
         
-        <a
-          href="#destinations"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors animate-bounce"
-          aria-label="Scroll to explore"
-        >
-          <span className="text-xs uppercase tracking-widest">Explore</span>
-          <ChevronDown className="h-6 w-6" />
-        </a>
-      </section>
-
-      {/* Featured Destinations */}
-      <section id="destinations" className="w-full py-20 md:py-28 px-4 relative z-20 reveal-on-scroll">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-4">
-              <Mountain className="h-4 w-4" />
-              <span>Featured Destinations</span>
-            </div>
-            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-              World's Most Extreme Places
-            </h2>
-            <div className="w-16 h-1 rounded-full bg-primary mx-auto mt-4" />
-            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Explore the most dangerous and beautiful destinations on Earth
-            </p>
+        {/* Decorative Compass Lines */}
+        <div className="absolute bottom-10 right-10 opacity-20 pointer-events-none hidden xl:block">
+          <div className="relative w-64 h-64 border border-primary/40 rounded-full animate-spin-slow">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-4 bg-primary" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1 h-4 bg-primary" />
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-1 bg-primary" />
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-4 h-1 bg-primary" />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredPlaces.map((place, index) => {
-              const image = PlaceHolderImages.find((p) => p.id === place.imageId);
-              return (
-                <Link
-                  key={place.id}
-                  href={`/places/${place.slug}`}
-                  className={`group relative aspect-[4/3] rounded-2xl overflow-hidden border border-border/60 hover:border-primary/50 shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 stagger-${index + 1}`}
-                >
-                  {image && (
-                    <Image
-                      src={image.imageUrl}
-                      alt={image.description}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
-                  
-                  {/* Danger Level Badge */}
-                  <div className="absolute top-3 left-3 flex items-center gap-2">
-                    <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      place.dangerLevel >= 4 ? 'bg-red-500/90 text-white' :
-                      place.dangerLevel >= 3 ? 'bg-orange-500/90 text-white' :
-                      'bg-yellow-500/90 text-black'
-                    }`}>
-                      Danger Level: {place.dangerLevel}/5
-                    </div>
-                    <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      place.category === 'extreme' ? 'bg-purple-500/90 text-white' :
-                      place.category === 'dangerous' ? 'bg-red-500/90 text-white' :
-                      'bg-blue-500/90 text-white'
-                    }`}>
-                      {place.category}
-                    </div>
-                  </div>
-                  
-                  <div className="absolute inset-0 flex flex-col justify-end p-4">
-                    <h3 className="font-headline text-xl md:text-2xl font-bold text-white group-hover:text-primary transition-colors">
-                      {place.name}
-                    </h3>
-                    <p className="text-sm text-white/80 mt-2 line-clamp-2">{place.description}</p>
-                    <div className="mt-3 flex items-center gap-2 text-primary text-sm font-semibold">
-                      <span>Explore</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+          <div className="absolute inset-0 flex items-center justify-center text-primary/40 font-mono text-[10px]">
+            LAT: 90.0000° S
           </div>
         </div>
       </section>
 
-      {/* Blog Writing CTA */}
-      <section className="w-full py-20 md:py-28 px-4 relative z-20 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 reveal-on-scroll">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-accent text-sm font-medium mb-6">
-            <BookOpen className="h-4 w-4" />
-            <span>Share Your Adventures</span>
+      {/* Featured Destinations - Tactical Grid */}
+      <section id="destinations" className="w-full py-32 px-4 relative z-10 overflow-hidden">
+        {/* Section Header */}
+        <div className="max-w-7xl mx-auto mb-20 reveal-on-scroll">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-primary font-mono text-xs uppercase tracking-[0.3em] mb-4">
+                <div className="w-8 h-[1px] bg-primary" /> Sector Analysis
+              </div>
+              <h2 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+                High-Risk <span className="text-primary">Deployments</span>
+              </h2>
+              <p className="text-muted-foreground mt-6 text-lg">
+                Our advanced sensors have identified 5 key areas requiring immediate attention. Access thermal data and terrain analysis below.
+              </p>
+            </div>
+            <Link href="/places" className="hidden md:flex items-center gap-3 text-white font-bold hover:text-primary transition-colors group">
+              VIEW ALL SECTORS <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </Link>
           </div>
-          <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            Write Your Story
+        </div>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredPlaces.map((place, index) => {
+            const image = PlaceHolderImages.find((p) => p.id === place.imageId);
+            return (
+              <Link
+                key={place.id}
+                href={`/places/${place.slug}`}
+                className={`group relative aspect-[3/4] rounded-2xl overflow-hidden glass-card glass-glow reveal-on-scroll transition-all duration-500 hover:-translate-y-3`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                {image && (
+                  <Image
+                    src={image.imageUrl}
+                    alt={image.description}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 opacity-70 group-hover:opacity-90"
+                  />
+                )}
+                
+                {/* HUD Elements */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-[#020617]/30" />
+                
+                {/* Card Top Info */}
+                <div className="absolute top-6 left-6 right-6 flex justify-between items-start z-20">
+                  <div className={`px-3 py-1 rounded-sm text-[10px] font-mono border ${
+                    place.dangerLevel >= 4 ? 'bg-red-500/20 border-red-500 text-red-400' :
+                    'bg-primary/20 border-primary text-primary'
+                  }`}>
+                    RISK: LVL {place.dangerLevel}
+                  </div>
+                  <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">
+                    ID: {place.id.split('-')[0]}
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-8 z-20">
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="h-[2px] w-8 bg-primary" />
+                    <span className="text-[10px] font-mono text-primary uppercase tracking-[0.2em]">{place.category}</span>
+                  </div>
+                  <h3 className="font-headline text-3xl font-bold text-white group-hover:text-primary transition-colors mb-3">
+                    {place.name}
+                  </h3>
+                  <p className="text-sm text-sky-100/60 line-clamp-2 mb-6 font-light leading-relaxed">
+                    {place.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between border-t border-white/10 pt-6 group-hover:border-primary/30 transition-colors">
+                    <span className="text-xs font-bold text-white tracking-widest uppercase">Access Data</span>
+                    <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                      <ArrowRight className="h-5 w-5 text-white group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Corners */}
+                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary/0 group-hover:border-primary/100 transition-all duration-700" />
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary/0 group-hover:border-primary/100 transition-all duration-700" />
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Mission Log Submission CTA */}
+      <section className="w-full py-40 relative overflow-hidden reveal-on-scroll">
+        <div className="absolute inset-0 bg-primary/5 -skew-y-3 transform scale-110" />
+        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full glass border-secondary/20 text-secondary text-xs font-mono uppercase tracking-[0.2em] mb-10 shadow-[0_0_20px_rgba(139,92,246,0.1)]">
+            <Radio className="h-4 w-4 animate-pulse" />
+            Establish Uplink
+          </div>
+          
+          <h2 className="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight">
+            Document Your <span className="text-secondary">Expedition</span>
           </h2>
-          <div className="w-16 h-1 rounded-full bg-primary mx-auto mt-4" />
-          <p className="text-muted-foreground mt-6 text-lg max-w-2xl mx-auto">
-            Have you explored these extreme destinations? Share your experiences, 
-            survival tips, and deep insights with our community of adventurers.
+          
+          <p className="text-xl text-sky-100/60 max-w-2xl mx-auto mb-14 font-light leading-relaxed">
+            Every survivor has a story. Every mission provides data. Contribute your findings to the global archive and help others survive the frost.
           </p>
           
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-card/50 border border-border/60 hover:border-primary/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="h-6 w-6 text-primary" />
+          <div className="grid md:grid-cols-3 gap-8 mb-16 text-left">
+            {[
+              { icon: BookOpen, title: "Survival Guides", desc: "Detailed breakdown of gear and tactics." },
+              { icon: MapIcon, title: "Terrain Mapping", desc: "Verified coordinates and hazard zones." },
+              { icon: Users, title: "Team Coordination", desc: "Connect with specialized elite squads." }
+            ].map((item, i) => (
+              <div key={i} className="glass-card p-8 rounded-2xl group hover:border-secondary/40 transition-colors">
+                <item.icon className="h-8 w-8 text-secondary mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-sm text-sky-100/50 leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Write Articles</h3>
-              <p className="text-sm text-muted-foreground">Create detailed guides and stories about your adventures</p>
-            </div>
-            <div className="p-6 rounded-2xl bg-card/50 border border-border/60 hover:border-primary/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                <Users className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">Share Experiences</h3>
-              <p className="text-sm text-muted-foreground">Connect with fellow explorers and share real-time updates</p>
-            </div>
-            <div className="p-6 rounded-2xl bg-card/50 border border-border/60 hover:border-primary/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                <Star className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">Build Reputation</h3>
-              <p className="text-sm text-muted-foreground">Become a trusted source for adventure insights</p>
-            </div>
+            ))}
           </div>
           
-          <Button asChild size="lg" className="rounded-full px-8 mt-10">
-            <Link href="/blog/write">
-              Start Writing <ArrowRight className="ml-2 h-5 w-5" />
+          <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-12 py-8 rounded-full text-xl font-bold shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:scale-105 transition-all">
+            <Link href="/blog/write" className="flex items-center gap-3">
+              START BROADCAST <ArrowRight className="w-6 h-6" />
             </Link>
           </Button>
         </div>
       </section>
 
-      {/* All Categories */}
-      <section className="w-full py-20 md:py-28 px-4 relative z-20 reveal-on-scroll">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-              Browse by Category
-            </h2>
-            <div className="w-16 h-1 rounded-full bg-primary mx-auto mt-4" />
+      {/* Tactical Category Explorer */}
+      <section className="w-full py-32 px-4 relative z-10 bg-[#020617]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-20 reveal-on-scroll">
+            <h2 className="font-headline text-4xl sm:text-5xl font-bold text-white mb-6">Tactical Databases</h2>
+            <div className="h-1 w-20 bg-primary rounded-full shadow-[0_0_10px_rgba(14,165,233,0.5)]" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <Link
-              href="/places?category=dangerous"
-              className="group p-8 rounded-2xl bg-gradient-to-br from-red-500/10 to-orange-500/10 border border-red-500/30 hover:border-red-500/50 transition-all duration-300 hover:-translate-y-2"
-            >
-              <Flame className="h-12 w-12 text-red-400 mb-4" />
-              <h3 className="font-headline text-2xl font-bold text-foreground mb-2 group-hover:text-red-400 transition-colors">
-                Dangerous Places
-              </h3>
-              <p className="text-muted-foreground">
-                Explore the world's most hazardous destinations that test human limits
-              </p>
-            </Link>
-            
-            <Link
-              href="/places?category=extreme"
-              className="group p-8 rounded-2xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2"
-            >
-              <Mountain className="h-12 w-12 text-purple-400 mb-4" />
-              <h3 className="font-headline text-2xl font-bold text-foreground mb-2 group-hover:text-purple-400 transition-colors">
-                Extreme Environments
-              </h3>
-              <p className="text-muted-foreground">
-                Discover places with the most extreme conditions on Earth
-              </p>
-            </Link>
-            
-            <Link
-              href="/places?category=beautiful"
-              className="group p-8 rounded-2xl bg-gradient-to-br from-green-500/10 to-teal-500/10 border border-green-500/30 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2"
-            >
-              <TreePine className="h-12 w-12 text-green-400 mb-4" />
-              <h3 className="font-headline text-2xl font-bold text-foreground mb-2 group-hover:text-green-400 transition-colors">
-                Beautiful Wilderness
-              </h3>
-              <p className="text-muted-foreground">
-                Experience breathtaking natural beauty and pristine landscapes
-              </p>
-            </Link>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { href: "/places?category=dangerous", icon: Flame, title: "Death Zones", color: "text-red-500", border: "border-red-500/20", hover: "hover:border-red-500/50", glow: "shadow-red-500/10", desc: "High-fatality sectors where conditions exceed biological limits." },
+              { href: "/places?category=extreme", icon: Mountain, title: "Anomalous Terrains", color: "text-primary", border: "border-primary/20", hover: "hover:border-primary/50", glow: "shadow-primary/10", desc: "Geographical deviations requiring specialized sub-zero hardware." },
+              { href: "/places?category=beautiful", icon: Snowflake, title: "Pristine Frontiers", color: "text-tertiary", border: "border-tertiary/20", hover: "hover:border-tertiary/50", glow: "shadow-tertiary/10", desc: "Untouched glacial landscapes of immense visual and strategic value." }
+            ].map((cat, i) => (
+              <Link
+                key={i}
+                href={cat.href}
+                className={`group p-10 rounded-2xl glass-card border ${cat.border} ${cat.hover} transition-all duration-500 hover:-translate-y-2 shadow-xl ${cat.glow} reveal-on-scroll`}
+                style={{ transitionDelay: `${i * 150}ms` }}
+              >
+                <cat.icon className={`h-16 w-16 ${cat.color} mb-8 group-hover:scale-110 transition-transform`} />
+                <h3 className={`font-headline text-3xl font-bold text-white mb-4 group-hover:${cat.color} transition-colors`}>
+                  {cat.title}
+                </h3>
+                <p className="text-sky-100/50 leading-relaxed">
+                  {cat.desc}
+                </p>
+                <div className="mt-8 flex items-center gap-3 text-xs font-mono font-bold uppercase tracking-widest text-white/40 group-hover:text-white transition-colors">
+                  Initialize Sync <ChevronDown className="h-4 w-4 -rotate-90" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-
-
-
     </div>
   );
 }

@@ -35,28 +35,31 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold mb-4">
+            <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold mb-4 group">
               <div className="relative">
-                <MountainSnow className="h-8 w-8 text-primary" />
-                <div className="absolute inset-0 bg-primary/20 blur-xl" />
+                <MountainSnow className="h-8 w-8 text-primary group-hover:rotate-12 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-primary/20 blur-xl group-hover:bg-primary/40 transition-all" />
               </div>
-              <span className="bg-gradient-to-r from-primary to-orange-200 bg-clip-text text-transparent">
-                Extreme Explorers
+              <span className="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent tracking-tighter">
+                ANTARCTICA <span className="text-foreground/90 font-light text-lg">UNVEILED</span>
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6 max-w-sm">
-              Discover the world's most dangerous and breathtaking destinations. 
-              Share your adventures, read deep insights, and connect with fellow explorers 
-              who push human limits.
+            <p className="text-muted-foreground/80 text-sm md:text-base leading-relaxed mb-8 max-w-sm font-body">
+              A high-precision exploration interface dedicated to documenting the most extreme and breathtaking sectors of the frozen continent. 
+              Join the mission, share tactical data, and survive the edge.
             </p>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>Global</span>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer group">
+                <div className="p-2 rounded-md bg-primary/5 border border-primary/10 group-hover:border-primary/30">
+                  <MapPin className="h-4 w-4 text-primary" />
+                </div>
+                <span className="font-mono">SECTOR-721-ANTARCTICA</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 text-primary" />
-                <span>contact@extremeexplorers.com</span>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground hover:text-secondary transition-colors cursor-pointer group">
+                <div className="p-2 rounded-md bg-secondary/5 border border-secondary/10 group-hover:border-secondary/30">
+                  <Mail className="h-4 w-4 text-secondary" />
+                </div>
+                <span className="font-mono">COMMS@ANTARCTICA-UNVEILED.COM</span>
               </div>
             </div>
           </div>
@@ -88,15 +91,15 @@ export function Footer() {
               <span>© {new Date().getFullYear()} Extreme Explorers. All rights reserved.</span>
             </div>
             <div className="flex items-center gap-6 text-sm">
-              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-all hover:translate-x-1">
+                Mission Protocol
               </Link>
-              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-all hover:translate-x-1">
+                Data Sovereignty
               </Link>
-              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-all hover:scale-110 flex items-center gap-2">
                 <Github className="h-4 w-4" />
-                <span>GitHub</span>
+                <span className="font-mono">SOURCE-CODE</span>
               </Link>
             </div>
           </div>
