@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 
 const Snowfall = ({ count = 36 }) => {
-  const [snowflakes, setSnowflakes] = useState<JSX.Element[]>([]);
+  const [snowflakes, setSnowflakes] = useState<React.ReactElement[]>([]);
 
   useEffect(() => {
     const generatedSnowflakes = Array.from({ length: count }).map((_, i) => {

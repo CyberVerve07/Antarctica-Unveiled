@@ -99,7 +99,7 @@ export function SearchBar() {
 
             {filteredPlaces.length === 0 && filteredBlogs.length === 0 && (
               <div className="px-4 py-8 text-center text-muted-foreground">
-                No results found for "{query}"
+                No results found for &ldquo;{query}&rdquo;
               </div>
             )}
           </div>

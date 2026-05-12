@@ -82,7 +82,7 @@ export default function Home() {
       y: 0,
       opacity: 1,
       filter: "blur(0px)",
-      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
     },
   };
 
@@ -203,7 +203,12 @@ export default function Home() {
                 
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <p className="text-2xl md:text-3xl text-white font-headline font-black italic leading-[1.1] relative z-10 tracking-tight">
-                  "THE EDGE IS NOT A PLACE. <br />IT IS A <span className="text-primary underline decoration-primary/30 underline-offset-8">MANIFESTO</span>."
+                  &ldquo;THE EDGE IS NOT A PLACE. <br />
+                  IT IS A{" "}
+                  <span className="text-primary underline decoration-primary/30 underline-offset-8">
+                    MANIFESTO
+                  </span>
+                  .&rdquo;
                 </p>
                 
                 {/* HUD Corners */}

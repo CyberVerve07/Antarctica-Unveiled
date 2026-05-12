@@ -227,7 +227,7 @@ export function TextHighlighter({ content, postId }: { content: string; postId: 
                       : "bg-pink-200"
                   }`}
                 >
-                  "{highlight.text}"
+                  &ldquo;{highlight.text}&rdquo;
                 </div>
                 {highlight.note && (
                   <p className="mt-2 text-sm text-muted-foreground italic">

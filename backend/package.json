@@ -1,0 +1,14 @@
+{
+  "name": "@extreme-explorers/backend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.ts",
+    "build": "echo \"no build step yet\"",
+    "start": "node src/server.ts",
+    "lint": "echo \"no lint configured yet\"",
+    "typecheck": "echo \"no typecheck configured yet\"",
+    "test": "echo \"no tests yet\""
+  }
+}

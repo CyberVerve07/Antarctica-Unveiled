@@ -52,15 +52,17 @@ function Calendar({
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
         day_hidden: "invisible",
         ...classNames,
-      }}
-      components={{
-        IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn("h-4 w-4", className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn("h-4 w-4", className)} {...props} />
-        ),
-      }}
+      } as unknown as CalendarProps["classNames"]}
+      components={
+        {
+          IconLeft: ({ className, ...iconProps }: { className?: string }) => (
+            <ChevronLeft className={cn("h-4 w-4", className)} {...iconProps} />
+          ),
+          IconRight: ({ className, ...iconProps }: { className?: string }) => (
+            <ChevronRight className={cn("h-4 w-4", className)} {...iconProps} />
+          ),
+        } as unknown as CalendarProps["components"]
+      }
       {...props}
     />
   )

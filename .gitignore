@@ -10,13 +10,21 @@
 # next.js
 /.next/
 /out/
+/frontend/.next/
+/frontend/out/
 
 # production
 /build
 
+# playwright
+/frontend/test-results/
+/frontend/playwright-report/
+
 # misc
 .DS_Store
 *.pem
+.modified
+.idx/
 
 # debug
 npm-debug.log*
@@ -36,7 +44,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # IDEs
 .vscode/

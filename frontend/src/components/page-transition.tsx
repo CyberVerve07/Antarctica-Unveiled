@@ -25,21 +25,21 @@ export function PageTransition({ children }: PageTransitionProps) {
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 0 }}
           exit={{ scaleY: 1 }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] }}
           className="fixed inset-0 z-[100] bg-primary origin-top pointer-events-none"
         />
         <motion.div
           initial={{ scaleY: 1 }}
           animate={{ scaleY: 0 }}
           exit={{ scaleY: 0 }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.1 }}
+          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.1 }}
           className="fixed inset-0 z-[100] bg-[#020617] origin-bottom pointer-events-none"
         />
 
         <motion.div
           initial={{ y: 20, opacity: 0, filter: "blur(10px)" }}
           animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number], delay: 0.3 }}
           className="w-full"
         >
           {children}

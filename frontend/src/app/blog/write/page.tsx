@@ -123,7 +123,7 @@ export default function BlogWritePage() {
   };
 
   const renderMarkdown = (text: string) => {
-    let html = text
+    const html = text
       .replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-4 mb-2">$1</h3>')
       .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-4 mb-2">$1</h2>')
       .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mt-4 mb-2">$1</h1>')
