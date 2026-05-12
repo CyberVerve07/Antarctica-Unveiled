@@ -30,8 +30,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 // NOTE: All AI-generated content has been replaced with static content to resolve persistent generation errors.
-
+import { 
+  historyPageContent,
+  lifePageContent,
+  researchPageContent,
+  climatePageContent,
+  wildlifePageContent,
+  visitPageContent,
   expeditionPageContent,
+  factsPageContent,
   PlaceHolderImages
 } from "@/lib/data";
 
