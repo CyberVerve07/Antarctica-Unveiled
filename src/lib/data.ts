@@ -47,45 +47,39 @@ export interface ImagePlaceholder {
 export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "hero-adventure",
-    imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80",
-    description: "Mountain adventure landscape",
-    imageHint: "Dramatic mountain peaks with clouds"
-  },
-  {
-    id: "hero-exploration",
-    imageUrl: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=80",
-    description: "Wilderness exploration",
-    imageHint: "Person hiking through misty forest"
+    imageUrl: "/images/hero_tactical.png",
+    description: "Futuristic Mission Control Hub with holographic displays",
+    imageHint: "High-tech command center interface with planetary telemetry"
   },
   {
     id: "amazon-rainforest",
-    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.DsIw1qFc-Vo9tUVVjqRP-gHaDt?rs=1&pid=ImgDetMain&o=7&rm=3",
-    description: "Amazon Rainforest canopy",
-    imageHint: "Lush green rainforest with sunlight filtering through canopy"
+    imageUrl: "/images/amazon_rainforest_tactical.png",
+    description: "Tactical Recon of Amazon Canopy",
+    imageHint: "Topographic and biological scan of dense rainforest"
   },
   {
-    id: "sahara-dunes",
-    imageUrl: "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
-    description: "Sahara sand dunes",
-    imageHint: "Golden sand dunes stretching to horizon"
+    id: "sahara-desert",
+    imageUrl: "/images/sahara_desert_tactical.png",
+    description: "Sahara Desert Thermal Mapping",
+    imageHint: "Heat signature analysis of vast desert dunes"
   },
   {
-    id: "everest-summit",
-    imageUrl: "https://images.unsplash.com/photo-1574735765780-aca0c7a0a9ea?w=800&q=80",
-    description: "Mount Everest summit",
-    imageHint: "Snow-capped Himalayan peaks"
+    id: "mount-everest",
+    imageUrl: "/images/mount_everest_tactical.png",
+    description: "Everest Summit HUD View",
+    imageHint: "Tactical telemetry view from the top of the world"
   },
   {
-    id: "antarctica-ice",
-    imageUrl: "https://www.bwallpaperhd.com/wp-content/uploads/2022/12/AntarcticaDay.jpg",
-    description: "Antarctic ice landscape",
-    imageHint: "Vast white ice sheet with blue ice formations"
+    id: "antarctica",
+    imageUrl: "/images/antarctica_tactical.png",
+    description: "Research Station Biological Hub",
+    imageHint: "Interior view of futuristic ice base with life support scans"
   },
   {
-    id: "death-valley-dunes",
-    imageUrl: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80",
-    description: "Mesquite Flat Sand Dunes",
-    imageHint: "Wind-sculpted sand dunes in Death Valley"
+    id: "death-valley",
+    imageUrl: "/images/death_valley_tactical.png",
+    description: "Death Valley Topographic Scan",
+    imageHint: "Detailed terrain mapping of extreme heat zones"
   }
 ];
 
@@ -126,9 +120,8 @@ export const places: Place[] = [
     ],
     imageId: "amazon-rainforest",
     galleryImages: [
-      "https://tse4.mm.bing.net/th/id/OIP.SUGJ9Ii8l8KM6otCQT0kwAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-      "https://tse3.mm.bing.net/th/id/OIP.CXKU_rGYletpFuR0cQe2WQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-      "https://img.freepik.com/premium-photo/explore-incredible-biodiversity-amazon-rainforest_1236475-3176.jpg?w=2000"
+      "amazon-rainforest",
+      "hero-adventure"
     ],
     survivalTips: [
       "Always travel with experienced guides",
@@ -184,8 +177,11 @@ export const places: Place[] = [
       "Some sand dunes 'sing' when wind blows",
       "Temperatures can swing 40°C between day and night"
     ],
-    imageId: "sahara-dunes",
-    galleryImages: ["sahara-camp", "sahara-oasis", "sahara-camel"],
+    imageId: "sahara-desert",
+    galleryImages: [
+      "sahara-desert",
+      "hero-adventure"
+    ],
     survivalTips: [
       "Carry minimum 4 liters of water per person daily",
       "Travel during cooler hours (early morning, evening)",
@@ -240,8 +236,11 @@ export const places: Place[] = [
       "Oxygen at summit is 1/3 of sea level",
       "The death zone starts at 8,000m"
     ],
-    imageId: "everest-summit",
-    galleryImages: ["everest-himalayas", "everest-base-camp", "everest-climbers"],
+    imageId: "mount-everest",
+    galleryImages: [
+      "mount-everest",
+      "hero-adventure"
+    ],
     survivalTips: [
       "Never climb without experienced Sherpas",
       "Use supplemental oxygen above 7,000m",
@@ -297,11 +296,10 @@ export const places: Place[] = [
       "The ice is up to 4.8km thick",
       "It's the largest desert in the world"
     ],
-    imageId: "antarctica-ice",
+    imageId: "antarctica",
     galleryImages: [
-      "https://tse2.mm.bing.net/th/id/OIP.OyoLcve5oDvJi-daylYuGAHaE8?w=1440&h=960&rs=1&pid=ImgDetMain&o=7&rm=3",
-      "https://th.bing.com/th/id/OIP.mvwsaK5rjUxp5TBcxW-BbQHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
-      "https://tse4.mm.bing.net/th/id/OIP.6wAGwrIYxR073h8iMS8CuAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+      "antarctica",
+      "hero-adventure"
     ],
     survivalTips: [
       "Never travel alone",
@@ -357,8 +355,11 @@ export const places: Place[] = [
       "Summer ground temperatures reach 82°C",
       "Named by prospectors who barely survived"
     ],
-    imageId: "death-valley-dunes",
-    galleryImages: ["death-valley-badwater", "death-valley-zabriskie", "death-valley-racetrack"],
+    imageId: "death-valley",
+    galleryImages: [
+      "death-valley",
+      "hero-adventure"
+    ],
     survivalTips: [
       "Never travel alone in summer",
       "Carry at least 4 liters of water per person daily",
@@ -396,13 +397,10 @@ export const mockBlogs: BlogPost[] = [
     place: "Amazon Rainforest",
     placeSlug: "amazon-rainforest",
     readTime: "45 min read",
-    image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&q=80",
+    image: "/images/amazon_rainforest_tactical.png",
     images: [
-      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",
-      "https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=800&q=80",
-      "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-      "https://images.unsplash.com/photo-1540206276207-3d257915ba51?w=800&q=80"
+      "amazon-rainforest",
+      "hero-adventure"
     ],
     content: `
 # Day 1: Entering the Green Hell
@@ -713,12 +711,10 @@ The rainforest is calling. Will you answer?
     place: "Mount Everest",
     placeSlug: "mount-everest",
     readTime: "30 min read",
-    image: "https://images.unsplash.com/photo-1574735765780-aca0c7a0a9ea?w=600&q=80",
+    image: "/images/mount_everest_tactical.png",
     images: [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
-      "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&q=80"
+      "mount-everest",
+      "hero-adventure"
     ],
     content: `
 # The Death Zone: Where Every Breath Counts
@@ -782,12 +778,10 @@ Everest is not just a mountain - it's a test of human will, preparation, and res
     place: "Sahara Desert",
     placeSlug: "sahara-desert",
     readTime: "20 min read",
-    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600&q=80",
+    image: "/images/sahara_desert_tactical.png",
     images: [
-      "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-      "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&q=80",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80"
+      "sahara-desert",
+      "hero-adventure"
     ],
     content: `
 # 150 Kilometers of Golden Silence
@@ -839,12 +833,10 @@ The Sahara is not empty - it's full of life, beauty, and lessons for those willi
     place: "Antarctica",
     placeSlug: "antarctica",
     readTime: "25 min read",
-    image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&q=80",
+    image: "/images/antarctica_tactical.png",
     images: [
-      "https://images.unsplash.com/photo-1469827160297-5101d87d46af?w=800&q=80",
-      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80",
-      "https://images.unsplash.com/photo-1520984032042-162d526883e0?w=800&q=80",
-      "https://images.unsplash.com/photo-1518182170546-0766aa6f607d?w=800&q=80"
+      "antarctica",
+      "hero-adventure"
     ],
     content: `
 # Six Months at the Bottom of the World
@@ -914,12 +906,10 @@ Antarctica is not just a place - it's a teacher of humility, resilience, and the
     place: "Death Valley",
     placeSlug: "death-valley",
     readTime: "18 min read",
-    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80",
+    image: "/images/death_valley_tactical.png",
     images: [
-      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-      "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&q=80"
+      "death-valley",
+      "hero-adventure"
     ],
     content: `
 # 56.7°C: The Hottest Place on Earth

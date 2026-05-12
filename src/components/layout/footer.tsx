@@ -1,65 +1,83 @@
 import Link from "next/link";
-import { MountainSnow, Mail, MapPin, ExternalLink, Github } from "lucide-react";
+import { DecryptText } from "@/components/ui/decrypt-text";
+import { motion } from "framer-motion";
+import { 
+  MountainSnow, 
+  MapPin, 
+  Mail, 
+  ExternalLink, 
+  Github 
+} from "lucide-react";
 
 const footerLinks = [
   {
-    title: "Explore",
+    title: "Sectors",
     links: [
-      { name: "All Places", href: "/places" },
-      { name: "Dangerous", href: "/places?category=dangerous" },
-      { name: "Extreme", href: "/places?category=extreme" },
-      { name: "Beautiful", href: "/places?category=beautiful" },
+      { name: "Global Map", href: "/places" },
+      { name: "Risk Assessment", href: "/places?category=dangerous" },
+      { name: "Extreme Zones", href: "/places?category=extreme" },
+      { name: "Safe Havens", href: "/places?category=beautiful" },
     ],
   },
   {
-    title: "Community",
+    title: "Network",
     links: [
-      { name: "Blog", href: "/blog" },
-      { name: "Write Story", href: "/blog/write" },
-      { name: "About", href: "/about" },
+      { name: "Intelligence Feed", href: "/blog" },
+      { name: "Field Reporting", href: "/blog/write" },
+      { name: "Operational Protocol", href: "/about" },
     ],
   },
   {
-    title: "Resources",
+    title: "Intelligence",
     links: [
-      { name: "Survival Tips", href: "/places" },
-      { name: "Equipment Guide", href: "/places" },
+      { name: "Survival Logic", href: "/places" },
+      { name: "Tactical Gear", href: "/places" },
     ],
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border/60 bg-card/40 backdrop-blur-sm mt-auto">
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+    <footer className="w-full border-t border-primary/20 bg-[#020617]/80 backdrop-blur-xl mt-auto relative overflow-hidden">
+      {/* Noise Grain Effect */}
+      <div className="absolute inset-0 noise-overlay opacity-[0.05] pointer-events-none" />
+      
+      <div className="container mx-auto px-4 md:px-8 py-16 md:py-24 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold mb-4 group">
+          <div className="lg:col-span-2 space-y-8">
+            <Link href="/" className="flex items-center gap-4 group">
               <div className="relative">
-                <MountainSnow className="h-8 w-8 text-primary group-hover:rotate-12 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-primary/20 blur-xl group-hover:bg-primary/40 transition-all" />
+                <div className="h-12 w-12 glass border border-primary/40 rounded-xl flex items-center justify-center relative z-10 overflow-hidden shadow-[0_0_20px_rgba(14,165,233,0.2)]">
+                  <MountainSnow className="h-7 w-7 text-primary group-hover:rotate-12 transition-transform duration-500" />
+                </div>
+                <div className="absolute inset-0 bg-primary/20 blur-2xl group-hover:bg-primary/40 transition-all scale-150" />
               </div>
-              <span className="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent tracking-tighter">
-                ANTARCTICA <span className="text-foreground/90 font-light text-lg">UNVEILED</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-white tracking-[0.2em] leading-none text-lg font-black flex items-center gap-1 uppercase">
+                  <DecryptText text="ANTARCTICA" delay={0.2} />
+                </span>
+                <span className="text-primary/80 font-light text-xs tracking-[0.4em] uppercase mt-1">
+                  UNVEILED
+                </span>
+              </div>
             </Link>
-            <p className="text-muted-foreground/80 text-sm md:text-base leading-relaxed mb-8 max-w-sm font-body">
-              A high-precision exploration interface dedicated to documenting the most extreme and breathtaking sectors of the frozen continent. 
+            <p className="text-muted-foreground/60 text-sm md:text-base leading-relaxed max-w-sm font-light font-mono">
+              [DECRYPTED_LOGS]: High-precision exploration interface dedicated to documenting extreme sectors. 
               Join the mission, share tactical data, and survive the edge.
             </p>
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer group">
-                <div className="p-2 rounded-md bg-primary/5 border border-primary/10 group-hover:border-primary/30">
-                  <MapPin className="h-4 w-4 text-primary" />
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4 text-[10px] text-primary/70 hover:text-primary transition-colors cursor-pointer group font-mono tracking-widest uppercase">
+                <div className="p-2 rounded-lg bg-primary/5 border border-primary/10 group-hover:border-primary/30 shadow-inner">
+                  <MapPin className="h-4 w-4" />
                 </div>
-                <span className="font-mono">SECTOR-721-ANTARCTICA</span>
+                <span>LOC: SECTOR-721-ANTARCTICA</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground hover:text-secondary transition-colors cursor-pointer group">
-                <div className="p-2 rounded-md bg-secondary/5 border border-secondary/10 group-hover:border-secondary/30">
-                  <Mail className="h-4 w-4 text-secondary" />
+              <div className="flex items-center gap-4 text-[10px] text-secondary/70 hover:text-secondary transition-colors cursor-pointer group font-mono tracking-widest uppercase">
+                <div className="p-2 rounded-lg bg-secondary/5 border border-secondary/10 group-hover:border-secondary/30 shadow-inner">
+                  <Mail className="h-4 w-4" />
                 </div>
-                <span className="font-mono">COMMS@ANTARCTICA-UNVEILED.COM</span>
+                <span>COMMS: UPLINK_SECURE_@ANTARCTICA-UNVEILED.COM</span>
               </div>
             </div>
           </div>
