@@ -36,5 +36,185 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     imageUrl: "/images/death_valley_tactical.png",
     description: "Death Valley Topographic Scan",
     imageHint: "Detailed terrain mapping of extreme heat zones"
+  },
+  {
+    id: "hero-antarctica",
+    description: "A vast, icy landscape in Antarctica under a clear blue sky, with mountains in the distance.",
+    imageUrl: "https://images.unsplash.com/photo-1647163641449-26c4350f0c09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhbnRhcmN0aWNhJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc2NTMxMzk3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "antarctica landscape"
+  },
+  {
+    id: "hero-aurora",
+    description: "The spectacular Aurora Australis dancing over an Antarctic research station.",
+    imageUrl: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhdXJvcmElMjBhbnRhcmN0aWNhJTIwbmlnaHR8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "aurora southern lights"
+  },
+  {
+    id: "history-exploration",
+    description: "An old wooden ship stuck in the ice, representing early Antarctic exploration.",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvbGQlMjBzaGlwJTIwaWNlfGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "old ship ice"
+  },
+  {
+    id: "life-research-station",
+    description: "A modern research station in Antarctica with people walking around in heavy winter gear.",
+    imageUrl: "https://images.unsplash.com/photo-1584266106906-503242fa6b52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZXNlYXJjaCUyMHN0YXRpb258ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "research station"
+  },
+  {
+    id: "research-scientist",
+    description: "A scientist in a parka taking ice core samples.",
+    imageUrl: "https://images.unsplash.com/photo-1584267828520-5e0d3fc22287?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHNzY2llbnRpc3QlMjBpY2V8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "scientist ice"
+  },
+  {
+    id: "climate-glacier",
+    description: "A large glacier calving into the ocean.",
+    imageUrl: "https://images.unsplash.com/photo-1763754078284-caee648e22fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxnbGFjaWVyJTIwY2FsdmluZ3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "glacier calving"
+  },
+  {
+    id: "visit-cruise-ship",
+    description: "A cruise ship navigating between icebergs in Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1563987177365-f4c2b3148d29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcnVpc2UlMjBzaGlwJTIwaWNlYmVyZ3N8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "cruise ship icebergs"
+  },
+  {
+    id: "deep-facts",
+    description: "An abstract image of ice crystals or a deep blue crevasse.",
+    imageUrl: "https://images.unsplash.com/photo-1542601931-1ec92c394336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZWVwJTIwYmx1ZSUyMGljZXxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "deep blue ice"
+  },
+  {
+    id: "mcmurdo-station",
+    description: "An aerial view of McMurdo Station, the largest research base in Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1584266106906-503242fa6b52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZXNlYXJjaCUyMHN0YXRpb258ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "antarctic base"
+  },
+  {
+    id: "vostok-station",
+    description: "The isolated Vostok Station in the middle of a vast, flat, snowy expanse.",
+    imageUrl: "https://images.unsplash.com/photo-1761844829335-e25e628db461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmVtb3RlJTIwc3RhdGlvbnxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "remote station"
+  },
+  {
+    id: "concordia-station",
+    description: "Concordia Station with its two cylindrical towers under the Antarctic night sky.",
+    imageUrl: "https://images.unsplash.com/photo-1641205535001-7c87f9d1b6ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhbnRhcmN0aWMlMjBuaWdodHxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "antarctic night"
+  },
+  {
+    id: "wildlife-penguins",
+    description: "A group of penguins waddling across the snow in Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1598463595514-c68991a0ee23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8cGVndWluc3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "penguins snow"
+  },
+  {
+    id: "expedition-team",
+    description: "An expedition team trekking across the Antarctic ice.",
+    imageUrl: "https://images.unsplash.com/photo-1516086811231-1e969a531f82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHhleHBlZGl0aW9ufGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "expedition team"
+  },
+  {
+    id: "wildlife-whale",
+    description: "A majestic humpback whale breaching in the icy waters of Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1568430462989-44163eb1752f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aGFsZSUyMGFudGFyY3RpY2F8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "whale ocean"
+  },
+  {
+    id: "wildlife-seal",
+    description: "A cute Weddell seal resting on the Antarctic ice.",
+    imageUrl: "https://images.unsplash.com/photo-1551415923-a2297c7fda79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZWFsJTIwYW50YXJjdGljYSUyMHNub3d8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "seal snow"
+  },
+  {
+    id: "wildlife-albatross",
+    description: "An albatross soaring over the Southern Ocean near Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1550951193-9254d233d6c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyb2YlMjBhbGJhdHJvc3N8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "albatross flying"
+  },
+  {
+    id: "landscape-iceberg",
+    description: "A stunning tabular iceberg floating in the Antarctic waters.",
+    imageUrl: "https://images.unsplash.com/photo-1548266652-99cf277df528?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpY2ViZXJnJTIwYW50YXJjdGljYSUyMHdhdGVyfGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "iceberg ocean"
+  },
+  {
+    id: "landscape-mountains",
+    description: "The majestic Transantarctic Mountains stretching across the continent.",
+    imageUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0cmFuc2FudGFyY3RpYyUyMG1vdW50YWluc3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "snowy mountains"
+  },
+  {
+    id: "landscape-sunset",
+    description: "A breathtaking Antarctic sunset with vibrant orange and pink hues.",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbnRhcmN0aWMlMjBzdW5zZXR8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "sunset mountains"
+  },
+  {
+    id: "landscape-sea-ice",
+    description: "Vast expanses of sea ice stretching to the horizon.",
+    imageUrl: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzZWElMjBpc2UlMjBhbnRhcmN0aWNhJTIwc25vd3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "sea ice snow"
+  },
+  {
+    id: "climate-ice-shelf",
+    description: "The massive ice shelves of Antarctica, crucial for sea level regulation.",
+    imageUrl: "https://images.unsplash.com/photo-1520681279154-51b3fb4ea0f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpY2UlMjBzaGVsZiUyMGFudGFyY3RpY2F8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "ice shelf"
+  },
+  {
+    id: "expedition-ski",
+    description: "Explorers skiing across the pristine Antarctic snow.",
+    imageUrl: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxza2lpbmclMjBhbnRhcmN0aWNhJTIwc25vd3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "skiing snow"
+  },
+  {
+    id: "expedition-camping",
+    description: "A remote expedition camp under the starry Antarctic sky.",
+    imageUrl: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHhjYW1waW5nJTIwYW50YXJjdGljYSUyMHNub3d8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "camping stars"
+  },
+  {
+    id: "climate-melting",
+    description: "Dramatic evidence of glacial melting in Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Z2xhY2llciUyMG1lbHRpbmclMjBhbnRhcmN0aWNhJTIwc25vd3xlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "glacier melting"
+  },
+  {
+    id: "wildlife-penguin-colony",
+    description: "A massive emperor penguin colony in Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHBlbmd1aW4lMjBjb2xvbnnJTIwYW50YXJjdGljYSUyMHNub3d8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "penguin colony"
+  },
+  {
+    id: "ice-crystals",
+    description: "Close-up of intricate ice crystals in Antarctica.",
+    imageUrl: "https://images.unsplash.com/photo-1483664852095-d6cc6870705d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpY2UlMjBjcmlzdGFscyUyMGFudGFyY3RpY2F8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "ice crystals macro"
+  },
+  {
+    id: "research-ice-core",
+    description: "Scientists examining ice core samples in a research lab.",
+    imageUrl: "https://images.unsplash.com/photo-1584590069637-22fb4e7c0880?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpY2UlMjBjb3JlJTIwbGFiJTIwc2NpZW50aXN0fGVufDB8fHx8MTc2NTM3MTkyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "ice core research"
+  },
+  {
+    id: "wildlife-skua",
+    description: "A South Polar skua flying over the Antarctic landscape.",
+    imageUrl: "https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHNrdWElMjBhbnRhcmN0aWNhJTIwYmlyZHxlbnwwfHx8fDE3NjUzNzE5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "bird skua"
+  },
+  {
+    id: "landscape-panorama",
+    description: "A panoramic view of the Antarctic landscape at dusk.",
+    imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhbnRhcmN0aWMlMjBwYW5vcmFtYSUyMHNub3d8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "mountain panorama"
+  },
+  {
+    id: "expedition-sled",
+    description: "Expedition members pulling supply sleds across the ice.",
+    imageUrl: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHBsb3clMjBzbm93JTIwYW50YXJjdGljYSUyMHNsZWR8ZW58MHx8fHwxNzY1MzcxOTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageHint: "sled expedition"
   }
 ];

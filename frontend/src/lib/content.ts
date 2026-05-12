@@ -27,24 +27,43 @@ export const lifePageContent = `
 <h3>Construction</h3>
 <ul><li>Elevated buildings (snow doesn’t bury them)</li><li>Aerodynamic shapes to reduce wind load</li><li>Triple insulation, vapor barriers</li><li>No exposed plumbing (everything freezes)</li></ul>
 <h3>Inside the station</h3>
-<p>Constant 20–22°C, controlled humidity, artificial lighting cycles to fake “day/night”.</p>
+<ul><li>Constant 20–22°C</li><li>Controlled humidity</li><li>Artificial lighting cycles to fake “day/night”</li></ul>
 <blockquote><p><strong>If the station loses power in winter:</strong><br/>Everyone dies within hours.</p></blockquote>
 <h2>5. Food & water: nothing grows here</h2>
 <h3>Food</h3>
-<p>Shipped once or twice per year. Mostly frozen meat, canned food, and dehydrated meals. Fresh food is a rare luxury. Calories are high (4,000–6,000/day). The extreme cold burns energy at a phenomenal rate.</p>
+<p>Shipped once or twice per year. Mostly frozen meat, canned food, and dehydrated meals. Fresh food is a rare luxury available only in the early months after resupply. Some stations experiment with small hydroponic labs to grow greens.</p>
+<p>Calories are high (4,000–6,000/day). The extreme cold burns energy at a phenomenal rate.</p>
 <h3>Water</h3>
-<p>Snow and ice are melted for water. It is then purified and recycled aggressively.</p>
+<p>Snow and ice are melted for water. It is then purified and recycled aggressively. Every single drop is tracked and conserved.</p>
+<p>Waste doesn't just disappear. All waste, including human waste, is collected and shipped out of the continent. Antarctica is legally protected, and leaving trash behind is not an option.</p>
 <h2>6. Power & technology: the real lifeline</h2>
-<p>Diesel generators (the primary workhorse), wind turbines, and solar panels (summer only). Satellite internet & comms are the only link to the outside world.</p>
+<h3>Power sources</h3>
+<ul><li>Diesel generators (the primary workhorse)</li><li>Wind turbines (supplemental, where conditions permit)</li><li>Solar panels (summer only, and less effective than you'd think)</li></ul>
+<h3>Tech essentials</h3>
+<ul><li>Satellite internet & comms (the only link to the outside world)</li><li>Weather radar and forecasting tools</li><li>GPS + mapping for safe navigation</li><li>Emergency medical equipment</li><li>Advanced fire suppression systems (fire is the #1 internal danger to a station)</li></ul>
+<p>There are no Amazon deliveries. There are no quick replacements. Everything critical is redundant, with backups for the backups.</p>
 <h2>7. Medical reality: no second chances</h2>
-<p>Most stations have one doctor. Facilities are limited. Evacuation is often impossible during winter. Psychological screening is brutally strict; preventive appendix removal is sometimes mandatory.</p>
+<p>Most stations have one doctor to handle everything from common colds to surgical emergencies. The facilities are limited, and evacuation is often impossible during the winter months when planes cannot land.</p>
+<blockquote><p><strong>If something goes seriously wrong:</strong><br/>You live with it or you die with it.</p></blockquote>
+<p>This harsh reality is why:</p>
+<ul><li>Psychological screening for personnel is brutally strict.</li><li>All dental work is mandatory before deployment to prevent issues.</li><li>In some cases, an appendix is removed preventively. Yes, seriously.</li></ul>
 <h2>8. Mental survival: the silent killer</h2>
-<p>The biggest enemy is your own mind during the long, dark winter. Isolation, monotony, and sensory deprivation are major challenges.</p>
+<p>The biggest enemy in Antarctica isn’t the cold. It’s your own mind during the long, dark winter.</p>
+<h3>Problems</h3>
+<ul><li><strong>Isolation:</strong> Complete separation from the world.</li><li><strong>Monotony:</strong> The same faces, same food, same corridors, every day.</li><li><strong>No privacy:</strong> You are never truly alone.</li><li><strong>No escape:</strong> You cannot leave, no matter what.</li><li><strong>Sensory deprivation:</strong> An endless world of white and black.</li></ul>
+<h3>Countermeasures</h3>
+<ul><li>Strict, unwavering daily routines.</li><li>Mandatory physical training and gym time.</li><li>Social events: Movie nights, music, board games.</li><li>Clearly defined responsibilities and work schedules.</li><li>Use of artificial sunlight lamps to combat Seasonal Affective Disorder (SAD).</li></ul>
+<p>Weak mental discipline leads to breakdowns. It is not optional.</p>
 <h2>9. Rules & law: no country owns Antarctica</h2>
-<p>Governed by the Antarctic Treaty System. Science only, no military activity, no mining, and strict environmental protection.</p>
-<h2>Final truth</h2>
+<p>The entire continent is governed by the Antarctic Treaty System, an international agreement.</p>
+<h3>Key rules:</h3>
+<ul><li><strong>Science Only:</strong> The continent is reserved for peaceful scientific investigation.</li><li><strong>No military activity:</strong> All military presence is banned.</li><li><strong>No mining:</strong> Mineral and resource exploitation is forbidden.</li><li><strong>Environmental protection is paramount:</strong> Strict regulations on waste, wildlife interaction, and pollution.</li></ul>
+<p>If you break the law in Antarctica, your home country is responsible for prosecuting you.</p>
+<h2>Final truth (read this carefully)</h2>
 <blockquote>
-<p>Humans don’t conquer nature. We temporarily negotiate with it using technology. Life there isn’t inspirational. It’s a masterclass in controlled survival under constant, unforgiving risk.</p>
+<p>Antarctica proves one thing clearly:<br/><strong>Humans don’t conquer nature. We temporarily negotiate with it using technology.</strong></p>
+<p>Remove the clothing → you die.<br/>Remove the power → you die.<br/>Remove the discipline → you die.</p>
+<p>Life there isn’t inspirational. It’s a masterclass in controlled survival under constant, unforgiving risk.</p>
 </blockquote>
 `;
 
@@ -138,4 +157,166 @@ export const expeditionPageContent = `
     <li><strong>Risks:</strong> Crevasses are the greatest physical danger.</li>
     <li><strong>Diet:</strong> 5,000-7,000 calories/day needed to pull sleds in the cold.</li>
 </ul>
+`;
+
+export const stationsData = [
+  {
+      name: "McMurdo Station (USA)",
+      imageId: "mcmurdo-station",
+      content: `
+<h4>The backbone of Antarctic operations</h4>
+<h4>Location & Scale</h4>
+<p>Ross Island (coastal Antarctica)<br/>Largest station on the continent</p>
+<p><strong>Population:</strong><br/>Summer: 800–1,000<br/>Winter: ~200</p>
+<p>This is not a “camp.” It’s a small industrial town.</p>
+<h4>Purpose</h4>
+<p>McMurdo exists for one reason: logistics + science support.</p>
+<ul>
+    <li>Supply hub for South Pole Station</li>
+    <li>Main airfield (ice runways)</li>
+    <li>Cargo, fuel, food distribution</li>
+    <li>Scientific research (biology, geology, climate, oceanography)</li>
+</ul>
+<p>If McMurdo shuts down, most Antarctic science collapses.</p>
+<h4>Infrastructure</h4>
+<ul>
+    <li>Power plant (diesel-based)</li>
+    <li>Desalination + ice-melting systems</li>
+    <li>Hospital (basic surgery possible)</li>
+    <li>Gym, cafeteria, workshops, labs</li>
+    <li>Roads, heavy vehicles, cranes</li>
+</ul>
+<p>This is the only place in Antarctica that feels semi-normal. That’s intentional—to keep people functional.</p>
+<h4>Risks & Reality</h4>
+<ul>
+    <li>Fire is the biggest danger (cold makes fire control harder)</li>
+    <li>Isolation still brutal in winter</li>
+    <li>Alcohol abuse and mental fatigue are known problems</li>
+</ul>
+<blockquote><p><strong>Bottom line:</strong><br/>McMurdo is Antarctica’s operating system.</p></blockquote>
+      `
+  },
+  {
+      name: "Vostok Station (Russia)",
+      imageId: "vostok-station",
+      content: `
+<h4>The coldest place humans have ever worked</h4>
+<h4>Location & Conditions</h4>
+<p>East Antarctic Plateau<br/>Altitude: ~3,500 m</p>
+<p>Coldest recorded temperature on Earth: −89.2°C</p>
+<p>This station is pure suffering.</p>
+<h4>Purpose</h4>
+<ul>
+    <li>Climate history (ice cores)</li>
+    <li>Atmospheric science</li>
+    <li>Study of Lake Vostok (subglacial lake buried under ~4 km of ice)</li>
+</ul>
+<p>Lake Vostok is isolated for millions of years. Studying it helps:</p>
+<ul>
+    <li>Understand ancient life</li>
+    <li>Model extraterrestrial oceans (Europa, Enceladus)</li>
+</ul>
+<h4>Living Conditions</h4>
+<p>Population: ~25–30 (summer), ~15 (winter)</p>
+<ul>
+    <li>Extremely low humidity (nosebleeds common)</li>
+    <li>Constant hypoxia (altitude + cold)</li>
+    <li>Equipment failure is routine</li>
+</ul>
+<p>People here don’t “work comfortably.”<br/>They endure.</p>
+<h4>Extreme Reality</h4>
+<ul>
+    <li>Fuel freezes</li>
+    <li>Plastic shatters</li>
+    <li>Metal becomes brittle</li>
+    <li>Breathing hurts</li>
+</ul>
+<p>In the 1980s, the station lost heating and researchers survived weeks at −60°C indoors.</p>
+<blockquote><p><strong>Bottom line:</strong><br/>Vostok is where humans test the absolute limits of survival.</p></blockquote>
+      `
+  },
+  {
+      name: "Concordia Station (France/Italy)",
+      imageId: "concordia-station",
+      content: `
+<h4>The most psychologically extreme station</h4>
+<h4>Location</h4>
+<p>Dome C, East Antarctica<br/>Altitude: ~3,200 m</p>
+<p>Winter temperature: −60°C</p>
+<p>Total isolation for 9 months<br/>No flights. No evacuation. Zero rescue.</p>
+<h4>Purpose</h4>
+<p>Concordia is less about Earth—and more about space.</p>
+<p><strong>Research areas:</strong></p>
+<ul>
+    <li>Human psychology under isolation</li>
+    <li>Sleep cycle disruption</li>
+    <li>Immune system degradation</li>
+    <li>Climate and atmospheric physics</li>
+    <li>Astronomy (cleanest air on Earth)</li>
+</ul>
+<p>NASA and ESA use Concordia data to prepare for:</p>
+<ul>
+    <li>Moon bases</li>
+    <li>Mars missions</li>
+</ul>
+<h4>Living Setup</h4>
+<p>Two connected towers</p>
+<ul>
+    <li>One for living</li>
+    <li>One for science</li>
+</ul>
+<p>Artificial light cycles<br/>Strict schedules<br/>Heavy mental health monitoring</p>
+<p><strong>Crew size:</strong><br/>Summer: ~50<br/>Winter: ~12</p>
+<p>You live with the same 11 people for 9 months.<br/>No escape. No rotation.</p>
+<h4>Psychological Risk</h4>
+<p>This is the hardest station mentally.</p>
+<ul>
+    <li>Depression</li>
+    <li>Cognitive slowdown</li>
+    <li>Interpersonal conflict</li>
+    <li>Seasonal affective disorder</li>
+</ul>
+<p>Only people with exceptional psychological stability are selected.</p>
+<blockquote><p><strong>Bottom line:</strong><br/>Concordia is Antarctica’s Mars simulator.</p></blockquote>
+      `
+  }
+];
+
+export const stationComparisonContent = `
+<h4 class="text-center mt-12 mb-4 !text-accent">Direct Comparison</h4>
+<div class="overflow-x-auto rounded-lg border border-border/50 bg-card/30 p-1">
+<table class="my-0 w-full">
+    <thead class="[&_tr]:border-b-0">
+        <tr class="border-b border-primary/20">
+            <th class="p-3 text-left font-headline text-accent">Station</th>
+            <th class="p-3 text-left font-headline text-accent">Main Threat</th>
+            <th class="p-3 text-left font-headline text-accent">Core Role</th>
+        </tr>
+    </thead>
+    <tbody class="[&_tr:last-child]:border-0">
+        <tr class="border-b border-border/50">
+            <td class="p-3 font-semibold">McMurdo</td>
+            <td class="p-3">Logistics failure</td>
+            <td class="p-3">Backbone of all Antarctic ops</td>
+        </tr>
+        <tr class="border-b border-border/50">
+            <td class="p-3 font-semibold">Vostok</td>
+            <td class="p-3">Extreme cold + altitude</td>
+            <td class="p-3">Physical survival limits</td>
+        </tr>
+        <tr>
+            <td class="p-3 font-semibold">Concordia</td>
+            <td class="p-3">Isolation + psychology</td>
+            <td class="p-3">Space mission research</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<blockquote class="mt-8">
+<p><strong>Final hard truth</strong></p>
+<p>McMurdo proves humans can build systems at scale.</p>
+<p>Vostok proves nature still dominates us.</p>
+<p>Concordia proves the mind breaks before the body.</p>
+<p>Antarctica isn’t about discovery alone. It’s about learning how fragile humans really are when comfort is removed.</p>
+</blockquote>
 `;
