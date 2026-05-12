@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ const idToHref: Record<string, string> = {
 
 export function ImageGalleryStrip() {
   const images = galleryIds
-    .map((id) => PlaceHolderImages.find((p) => p.id === id))
+    .map((id) => PlaceHolderImages.find((p: ImagePlaceholder) => p.id === id))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
 
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());

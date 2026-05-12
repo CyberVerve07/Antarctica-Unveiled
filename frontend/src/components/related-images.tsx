@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 
 const slugToExtraIds: Record<string, string[]> = {
   history: ["expedition-team", "life-research-station"],
@@ -20,7 +20,7 @@ export function RelatedImages({ slug, mainImageId }: RelatedImagesProps) {
   const extraIds = slugToExtraIds[slug];
   const ids = Array.from(new Set([mainImageId, ...(extraIds ?? [])])).slice(0, 3);
   const images = ids
-    .map((id) => PlaceHolderImages.find((p) => p.id === id))
+    .map((id) => PlaceHolderImages.find((p: ImagePlaceholder) => p.id === id))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
 
   if (images.length === 0) return null;
